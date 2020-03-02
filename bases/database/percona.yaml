@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  labels:
+    app: db
+    k8s-app: magento
+spec:
+  selector:
+    app: db
+  ports:
+  - name: db
+    port: 3306
+
+---
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db
+spec:
+  selector:
+    matchLabels:
+      app: db
+  serviceName: db
+  template:
+    metadata:
+      labels:
+        app: db
+        k8s-app: magento
+    spec:
+      containers:
+      - args:
+        - --max_allowed_packet=134217728
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: data
+        env:
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: DB_NAME
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: DB_PASS
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: DB_USER
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: DB_ROOT_PASS
+        image: percona:5.7
+        name: db
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+      restartPolicy: Always
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi

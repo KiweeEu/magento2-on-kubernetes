@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: magento-unpack
+spec:
+  template:
+    metadata:
+      name: unpack
+      labels:
+        app: magento-unpack
+        k8s-app: magento
+    spec:
+      containers:
+      - name: magento-unpack
+        image: kiweeteam/magento2:vanilla-2.3.2-php7.2-fpm
+        command: ["/bin/sh"]
+        args:
+        - -c
+        - |
+          /bin/bash <<'EOF'
+          rsync -avc /var/www/html/pub/static/frontend/ /tmp/static/frontend/ --delete
+          rsync -avc /var/www/html/pub/static/adminhtml/ /tmp/static/adminhtml/ --delete
+          rsync -avc /var/www/html/pub/static/deployed_version.txt /tmp/static/deployed_version.txt --delete
+          EOF
+        volumeMounts:
+        - name: static
+          mountPath: /tmp/static
+      restartPolicy: OnFailure
+      volumes:
+      - name: static
+        persistentVolumeClaim:
+          claimName: static

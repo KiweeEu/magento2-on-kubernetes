@@ -1,0 +1,19 @@
+resources:
+- php.yaml
+- web.yaml
+- ingress/main.yaml
+- cron/magento.yaml
+- jobs/install.yaml
+- jobs/unpack.yaml
+- pvc/media.yaml
+- pvc/static.yaml
+
+configMapGenerator:
+- name: nginx
+  files:
+  - config/nginx/conf.d/default.conf
+  - config/nginx/magento2.conf
+- name: config
+  env: config/common.env
+- name: aux
+  env: config/aux.env

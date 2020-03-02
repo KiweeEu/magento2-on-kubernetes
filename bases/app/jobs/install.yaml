@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: magento-install
+spec:
+  template:
+    metadata:
+      name: install
+      labels:
+        app: magento-install
+        k8s-app: magento
+    spec:
+      containers:
+      - name: magento-setup
+        image: kiweeteam/magento2:vanilla-2.3.2-php7.2-fpm
+        command: ["/bin/sh"]
+        args:
+        - -c
+        - |
+          /bin/bash <<'EOF'
+          bin/install.sh
+          php bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/small.xml
+          magerun index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun index:set-mode schedule {}
+          magerun cache:flush
+          EOF
+        envFrom:
+        - configMapRef:
+            name: config
+        volumeMounts:
+        - mountPath: /var/www/html/pub/media
+          name: media
+      volumes:
+      - name: media
+        persistentVolumeClaim:
+          claimName: media
+      restartPolicy: OnFailure

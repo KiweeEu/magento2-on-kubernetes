@@ -1,0 +1,42 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: magento-cron
+  namespace: default
+spec:
+  schedule: '* * * * *'
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      template:
+        metadata:
+          labels:
+            app: magento-cron
+            k8s-app: magento
+        spec:
+          containers:
+          - name: magento-cron
+            image: kiweeteam/magento2:vanilla-2.3.2-php7.2-fpm
+            command: ["/bin/sh"]
+            args:
+            - -c
+            - |
+              php bin/magento cron:run
+            envFrom:
+            - configMapRef:
+                name: config
+            - configMapRef:
+                name: aux
+            resources:
+              limits:
+                cpu: 500m
+                memory: 4Gi
+              requests:
+                cpu: 50m
+                memory: 1Gi
+          restartPolicy: Never
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 600
+  failedJobsHistoryLimit: 20
+  successfulJobsHistoryLimit: 5

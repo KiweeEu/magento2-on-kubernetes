@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: magento-web
+  labels:
+    app: magento-web
+    k8s-app: magento
+spec:
+  ports:
+  - name: "http"
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: magento-web
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magento-web
+  labels:
+    app: magento-web
+    k8s-app: magento
+spec:
+  selector:
+    matchLabels:
+      app: magento-web
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 30%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: magento-web
+        k8s-app: magento
+    spec:
+      containers:
+      - image: nginx:mainline
+        imagePullPolicy: Always
+        name: magento-web
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 10m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 128Mi
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d/default.conf
+          name: nginx-config
+          subPath: default.conf
+        - mountPath: /var/www/html/magento2.conf
+          name: nginx-config
+          subPath: magento2.conf
+        - name: media
+          mountPath: /var/www/html/pub/media
+        - mountPath: /var/www/html/pub/static
+          name: static
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: nginx
+        name: nginx-config
+      - name: media
+        persistentVolumeClaim:
+          claimName: media
+      - name: static
+        persistentVolumeClaim:
+          claimName: static
