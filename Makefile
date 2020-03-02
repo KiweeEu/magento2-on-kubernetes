@@ -1,3 +1,16 @@
+ELASTIC-OPERATOR-PATH := vendor/ec-on-k8s
+ELASTIC-OPERATOR-FILE := all-in-one.yaml
+ELASTIC-OPERATOR-URL := https://download.elastic.co/downloads/eck/1.0.0/all-in-one.yaml
+
+$(ELASTIC-OPERATOR-PATH):
+	mkdir -p $(ELASTIC-OPERATOR-PATH)
+
+$(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE): $(ELASTIC-OPERATOR-PATH)
+	curl -o $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE) $(ELASTIC-OPERATOR-URL)
+
+elastic-operator: $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
+	kubectl apply -f $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
+
 minikube:
 	minikube start \
 	--kubernetes-version=v1.17.0 \
@@ -17,4 +30,7 @@ minikube:
 step-1:
 	kustomize build step-1 | kubectl apply -f -
 
-.PHONY: minikube step-1
+step-2: elastic-operator
+	kustomize build step-2 | kubectl apply -f -
+
+.PHONY: minikube step-1 step-2
