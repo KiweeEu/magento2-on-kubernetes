@@ -1,0 +1,12 @@
+bases:
+  - ../step-2
+  - ../bases/redis
+
+resources:
+  - hpa/magento-php.yaml
+  - hpa/magento-web.yaml
+
+configMapGenerator:
+- name: aux
+  behavior: merge
+  env: config/aux.env
