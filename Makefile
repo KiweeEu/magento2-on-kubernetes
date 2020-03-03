@@ -36,4 +36,7 @@ step-2: elastic-operator
 step-3: elastic-operator
 	kustomize build step-3 | kubectl apply -f -
 
-.PHONY: minikube step-1 step-2 step-3
+step-4: elastic-operator
+	kustomize build step-4 | kubectl apply -f -
+
+.PHONY: minikube step-1 step-2 step-3 step-4

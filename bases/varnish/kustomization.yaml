@@ -1,0 +1,6 @@
+resources:
+- varnish.yaml
+configMapGenerator:
+- name: varnish
+  files:
+  - config/default.vcl

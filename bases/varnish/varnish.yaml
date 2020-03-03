@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: varnish
+  labels:
+    app: varnish
+    k8s-app: magento
+spec:
+  selector:
+    app: varnish
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: proxy
+    port: 6091
+    protocol: TCP
+    targetPort: 6091
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: varnish
+spec:
+  selector:
+    matchLabels:
+      app: varnish
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: varnish
+        k8s-app: magento
+    spec:
+      containers:
+      - image: varnish:6.2
+        name: varnish
+        command: ["/bin/sh"]
+        args:
+          - -c
+          - |
+            varnishd -a :80 -a :6091 -f /etc/varnish/default.vcl -s default,512M;
+            varnishncsa -F '%h %l %u %t "%r" %s %b "%{Referer}i" "%{User-agent}i" %{Varnish:handling}x'
+        ports:
+        - containerPort: 80
+        - containerPort: 6091
+        resources:
+          requests:
+            cpu: 50m
+            memory: 512Mi
+        env:
+        - name: VARNISH_BACKEND_HOST
+          value: web
+        - name: VARNISH_BACKEND_PORT
+          value: "80"
+        volumeMounts:
+        - name: config
+          mountPath: /etc/varnish/default.vcl
+          subPath: default.vcl
+      restartPolicy: Always
+      volumes:
+      - name: config
+        configMap:
+          name: varnish

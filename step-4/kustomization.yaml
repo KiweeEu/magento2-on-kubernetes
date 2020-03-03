@@ -1,0 +1,16 @@
+bases:
+  - ../step-3
+  - ../bases/varnish
+
+patchesJson6902:
+- path: patch/ingress.yaml
+  target:
+    group: networking.k8s.io
+    version: v1beta1
+    kind: Ingress
+    name: main
+
+configMapGenerator:
+- name: aux
+  behavior: merge
+  env: config/aux.env
