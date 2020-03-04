@@ -1,3 +1,7 @@
+MINIKUBE = /usr/bin/env minikube
+KUSTOMIZE = /usr/bin/env kustomize
+KUBECTL = /usr/bin/env kubectl
+
 ELASTIC-OPERATOR-PATH := vendor/ec-on-k8s
 ELASTIC-OPERATOR-FILE := all-in-one.yaml
 ELASTIC-OPERATOR-URL := https://download.elastic.co/downloads/eck/1.0.0/all-in-one.yaml
@@ -9,10 +13,10 @@ $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE): $(ELASTIC-OPERATOR-PATH)
 	curl -o $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE) $(ELASTIC-OPERATOR-URL)
 
 elastic-operator: $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
-	kubectl apply -f $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
+	$(KUBECTL) apply -f $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
 
 minikube:
-	minikube start \
+	$(MINIKUBE) start \
 	--kubernetes-version=v1.17.0 \
 	--vm-driver=kvm2 \
 	--cpus=4 \
@@ -28,15 +32,15 @@ minikube:
 	minikube addons enable metrics-server
 
 step-1:
-	kustomize build step-1 | kubectl apply -f -
+	$(KUSTOMIZE) build step-1 | $(KUBECTL) apply -f -
 
 step-2: elastic-operator
-	kustomize build step-2 | kubectl apply -f -
+	$(KUSTOMIZE) build step-2 | $(KUBECTL) apply -f -
 
 step-3: elastic-operator
-	kustomize build step-3 | kubectl apply -f -
+	$(KUSTOMIZE) build step-3 | $(KUBECTL) apply -f -
 
 step-4: elastic-operator
-	kustomize build step-4 | kubectl apply -f -
+	$(KUSTOMIZE) build step-4 | $(KUBECTL) apply -f -
 
 .PHONY: minikube step-1 step-2 step-3 step-4
