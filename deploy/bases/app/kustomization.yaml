@@ -1,3 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: app
+
 resources:
 - php.yaml
 - web.yaml
@@ -14,6 +19,8 @@ configMapGenerator:
   - config/nginx/conf.d/default.conf
   - config/nginx/magento2.conf
 - name: config
-  env: config/common.env
+  envs:
+  - config/common.env
 - name: aux
-  env: config/aux.env
+  envs:
+  - config/aux.env

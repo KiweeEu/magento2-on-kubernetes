@@ -1,0 +1,8 @@
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: 'Run basic manifest validation'
+          image: 'garethr/kubeval:0.15.0'
+          script:
+            - kubeval -d deploy -o tap --ignore-missing-schemas

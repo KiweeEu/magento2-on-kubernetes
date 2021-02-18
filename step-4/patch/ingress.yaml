@@ -1,6 +1,0 @@
-- op: replace
-  path: /spec/backend/serviceName
-  value: varnish
-- op: replace
-  path: /spec/backend/servicePort
-  value: 6091

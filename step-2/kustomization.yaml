@@ -1,8 +1,0 @@
-bases:
-  - ../step-1
-  - ../bases/elasticsearch
-
-configMapGenerator:
-- name: aux
-  behavior: merge
-  env: config/aux.env

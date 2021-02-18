@@ -7,5 +7,16 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## Unreleased
+### Added
+- A main `kustomization.yaml` file
+- Kubeval validation through Bitbucket pipelines
+- Metadata in kustomization files
+
+### Changed
+- Change `env` to `envs` in kustomization.yaml files
+- Move all manifests to `deploy/`
+- Use JSON for patchesJson6902 instead of YAML
+
 ## [2.3.2-1] - 2020-03-04
 Initial public release.
