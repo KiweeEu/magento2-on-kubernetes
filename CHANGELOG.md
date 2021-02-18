@@ -14,6 +14,8 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 - Metadata in kustomization files
 
 ### Changed
+- Update ECK to 1.4.0
+- Update Kubernetes to 1.18.15
 - Change `env` to `envs` in kustomization.yaml files
 - Move all manifests to `deploy/`
 - Use JSON for patchesJson6902 instead of YAML

@@ -4,7 +4,7 @@ KUBECTL = /usr/bin/env kubectl
 
 ELASTIC-OPERATOR-PATH := vendor/ec-on-k8s
 ELASTIC-OPERATOR-FILE := all-in-one.yaml
-ELASTIC-OPERATOR-URL := https://download.elastic.co/downloads/eck/1.0.0/all-in-one.yaml
+ELASTIC-OPERATOR-URL := https://download.elastic.co/downloads/eck/1.4.0/all-in-one.yaml
 
 $(ELASTIC-OPERATOR-PATH):
 	mkdir -p $(ELASTIC-OPERATOR-PATH)
@@ -17,7 +17,7 @@ elastic-operator: $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
 
 minikube:
 	$(MINIKUBE) start \
-	--kubernetes-version=v1.17.0 \
+	--kubernetes-version=v1.18.15 \
 	--vm-driver=kvm2 \
 	--cpus=4 \
 	--memory=16g \
