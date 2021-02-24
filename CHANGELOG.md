@@ -12,6 +12,7 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 - A main `kustomization.yaml` file
 - Kubeval validation through Bitbucket pipelines
 - Metadata in kustomization files
+- Sources for Magento Docker image
 
 ### Changed
 - Update ECK to 1.4.0

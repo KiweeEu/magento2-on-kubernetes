@@ -35,6 +35,9 @@ spec:
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: data
+        - mountPath: /etc/my.cnf
+          name: mycnf
+          subPath: my.cnf
         env:
         - name: MYSQL_DATABASE
           valueFrom:
@@ -63,6 +66,10 @@ spec:
             cpu: 100m
             memory: 256Mi
       restartPolicy: Always
+      volumes:
+      - name: mycnf
+        configMap:
+          name: mycnf
   volumeClaimTemplates:
   - metadata:
       name: data
