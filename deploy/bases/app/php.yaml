@@ -40,8 +40,8 @@ spec:
         k8s-app: magento
     spec:
       containers:
-      - image: kiweeteam/magento2:vanilla-2.3.2-php7.2-fpm
-        imagePullPolicy: IfNotPresent
+      - image: kiweeteam/magento2:2.3.6-p1-1
+        imagePullPolicy: Always
         name: magento-php
         ports:
         - containerPort: 9000
@@ -82,7 +82,7 @@ spec:
         - name: static
           mountPath: /var/www/html/pub/static
       - image: busybox
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: system-log
         command: ["/bin/sh"]
         args:
@@ -102,7 +102,7 @@ spec:
         - name: logs
           mountPath: /var/www/html/var/log
       - image: busybox
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: exception-log
         command: ["/bin/sh"]
         args:
@@ -122,7 +122,7 @@ spec:
         - name: logs
           mountPath: /var/www/html/var/log
       - image: busybox
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: debug-log
         command: ["/bin/sh"]
         args:

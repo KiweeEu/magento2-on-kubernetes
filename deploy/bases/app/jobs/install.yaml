@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: magento-setup
-        image: kiweeteam/magento2:vanilla-2.3.2-php7.2-fpm
+        image: kiweeteam/magento2:2.3.6-p1-1
         command: ["/bin/sh"]
         args:
         - -c
@@ -29,6 +29,7 @@ spec:
         volumeMounts:
         - mountPath: /var/www/html/pub/media
           name: media
+        imagePullPolicy: Always
       volumes:
       - name: media
         persistentVolumeClaim:

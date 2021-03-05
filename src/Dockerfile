@@ -80,5 +80,8 @@ ENV MAGE_MODE=production
 RUN php -d memory_limit=2G bin/magento setup:di:compile
 RUN composer dump-autoload --optimize --apcu
 RUN php -d memory_limit=2G bin/magento setup:static-content:deploy -f
+RUN rm -rf /var/www/html/var/cache
+RUN rm -rf /var/www/html/var/page_cache
+RUN rm -rf /var/www/html/var/session
 
 COPY --chown=www-data app/etc/env.docker.php app/etc/env.php

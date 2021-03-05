@@ -6,19 +6,6 @@ $env = [
     'backend' => [
         'frontName' => getenv('ADMIN_URI')
     ],
-    'system' => [
-        'default' => [
-            'smile_elasticsuite_core_base_settings' => [
-                'es_client' => [
-                    'servers' => getenv('ES_HOST'),
-                    'enable_https_mode' => 0,
-                    'http_auth_user' => '',
-                    'http_auth_pwd' => '',
-                    'enable_http_auth' => false
-                ]
-            ]
-        ]
-    ],
     'crypt' => [
         'key' => getenv('KEY')
     ],

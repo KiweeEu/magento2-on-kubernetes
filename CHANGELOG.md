@@ -8,6 +8,8 @@ suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
 ## Unreleased
+
+## [2.3.6-p1-1] - 2021-03-04
 ### Added
 - A main `kustomization.yaml` file
 - Kubeval validation through Bitbucket pipelines
@@ -17,9 +19,12 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 ### Changed
 - Update ECK to 1.4.0
 - Update Kubernetes to 1.18.15
+- Update Magento version in K8s manifests
 - Change `env` to `envs` in kustomization.yaml files
 - Move all manifests to `deploy/`
 - Use JSON for patchesJson6902 instead of YAML
+- Always pull new images by default
+- Use RWO accessMode on databse volumes
 
 ## [2.3.2-1] - 2020-03-04
 Initial public release.

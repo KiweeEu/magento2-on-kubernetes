@@ -65,6 +65,7 @@ spec:
           requests:
             cpu: 100m
             memory: 256Mi
+        imagePullPolicy: Always
       restartPolicy: Always
       volumes:
       - name: mycnf
@@ -75,7 +76,7 @@ spec:
       name: data
     spec:
       accessModes:
-      - ReadWriteMany
+      - ReadWriteOnce
       resources:
         requests:
           storage: 10Gi
