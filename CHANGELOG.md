@@ -25,6 +25,7 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 - Use JSON for patchesJson6902 instead of YAML
 - Always pull new images by default
 - Use RWO accessMode on databse volumes
+- Renamed 'aux.env' to 'additional.env'
 
 ## [2.3.2-1] - 2020-03-04
 Initial public release.

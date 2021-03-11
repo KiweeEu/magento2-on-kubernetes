@@ -21,6 +21,6 @@ configMapGenerator:
 - name: config
   envs:
   - config/common.env
-- name: aux
+- name: additional
   envs:
-  - config/aux.env
+  - config/additional.env

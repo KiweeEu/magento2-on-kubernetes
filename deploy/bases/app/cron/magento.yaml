@@ -27,7 +27,7 @@ spec:
             - configMapRef:
                 name: config
             - configMapRef:
-                name: aux
+                name: additional
             resources:
               limits:
                 cpu: 500m

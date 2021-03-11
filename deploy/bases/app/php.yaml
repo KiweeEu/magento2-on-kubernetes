@@ -73,7 +73,7 @@ spec:
         - configMapRef:
             name: config
         - configMapRef:
-            name: aux
+            name: additional
         volumeMounts:
         - name: logs
           mountPath: /var/www/html/var/log

@@ -8,7 +8,7 @@ bases:
   - ../bases/elasticsearch
 
 configMapGenerator:
-- name: aux
+- name: additional
   behavior: merge
   envs:
-  - config/aux.env
+  - config/additional.env

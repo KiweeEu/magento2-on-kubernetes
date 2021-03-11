@@ -12,7 +12,7 @@ resources:
   - hpa/magento-web.yaml
 
 configMapGenerator:
-- name: aux
+- name: additional
   behavior: merge
   envs:
-  - config/aux.env
+  - config/additional.env
