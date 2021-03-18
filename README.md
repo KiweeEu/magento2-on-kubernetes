@@ -12,7 +12,7 @@ else you need to deploy Magento 2 on Kubernetes yourself.
 * Minikube or a Kubernetes cluster with NGINX Ingress controller and storage
   provisioning
 * `kubectl` configured with the proper context
-* Standalone version of [kustomize](https://kustomize.io/)
+* Standalone version of [kustomize](https://kustomize.io/) v3.9.0 or newer
 * `make`
 
 ## Deployment
