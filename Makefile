@@ -18,7 +18,6 @@ elastic-operator: $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
 minikube:
 	minikube start \
 	--kubernetes-version=v1.20.5 \
-	--driver=hyperv \
 	--cpus=4 \
 	--memory=7g \
 	--bootstrapper=kubeadm \
