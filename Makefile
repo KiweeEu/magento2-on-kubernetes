@@ -13,14 +13,14 @@ $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE): $(ELASTIC-OPERATOR-PATH)
 	curl -o $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE) $(ELASTIC-OPERATOR-URL)
 
 elastic-operator: $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
-	$(KUBECTL) apply -f $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
+	kubectl apply -f $(ELASTIC-OPERATOR-PATH)/$(ELASTIC-OPERATOR-FILE)
 
 minikube:
-	$(MINIKUBE) start \
-	--kubernetes-version=v1.18.15 \
-	--vm-driver=kvm2 \
+	minikube start \
+	--kubernetes-version=v1.20.5 \
+	--driver=hyperv \
 	--cpus=4 \
-	--memory=16g \
+	--memory=7g \
 	--bootstrapper=kubeadm \
 	--extra-config=kubelet.authentication-token-webhook=true \
 	--extra-config=kubelet.authorization-mode=Webhook \
@@ -31,16 +31,17 @@ minikube:
 	minikube addons enable storage-provisioner
 	minikube addons enable metrics-server
 
+	
 step-1:
-	$(KUSTOMIZE) build deploy/step-1 | $(KUBECTL) apply -f -
+	kustomize build deploy/step-1 | kubectl apply -f -
 
 step-2: elastic-operator
-	$(KUSTOMIZE) build deploy/step-2 | $(KUBECTL) apply -f -
+	kustomize build deploy/step-2 | kubectl apply -f -
 
 step-3: elastic-operator
-	$(KUSTOMIZE) build deploy/step-3 | $(KUBECTL) apply -f -
+	kustomize build deploy/step-3 | kubectl apply -f -
 
 step-4: elastic-operator
-	$(KUSTOMIZE) build deploy/step-4 | $(KUBECTL) apply -f -
+	kustomize build deploy/step-4 | kubectl apply -f -
 
 .PHONY: minikube step-1 step-2 step-3 step-4
