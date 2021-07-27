@@ -1,0 +1,17 @@
+name: CI
+on:
+  - pull_request
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    name: deploy magento to minikube
+    steps:
+    - uses: actions/checkout@v2
+    - name: Start minikube
+      run:
+        make minikube
+        
+    - name: Deploy to minikube
+      run:
+        make step-4
+     
