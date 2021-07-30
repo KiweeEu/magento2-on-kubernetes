@@ -3,7 +3,7 @@ on: [push]
 jobs:
   job1:
     runs-on: self-hosted
-    name: deploy magento to minikube local
+    name: deploy magento to minikube local 2
     steps:
     - uses: actions/checkout@v2
     - name: Start minikube
