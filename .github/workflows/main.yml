@@ -2,7 +2,7 @@ name: CI
 on: [push]
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: deploy magento to minikube local
     steps:
     - uses: actions/checkout@v2
