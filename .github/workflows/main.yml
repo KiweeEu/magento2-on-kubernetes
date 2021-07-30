@@ -8,5 +8,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy to minikube
       run:
-        make step-4
+        make minikube
      
