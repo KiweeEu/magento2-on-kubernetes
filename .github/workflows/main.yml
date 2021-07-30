@@ -3,7 +3,7 @@ on: [push]
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: deploy magento to minikube
+    name: deploy magento to minikube local
     steps:
     - uses: actions/checkout@v2
     - name: Start minikube
