@@ -6,10 +6,6 @@ jobs:
     name: deploy magento to minikube local 2
     steps:
     - uses: actions/checkout@v2
-    - name: Start minikube
-      run:
-        make minikube
-        
     - name: Deploy to minikube
       run:
         make step-4
