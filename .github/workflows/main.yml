@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Deploy to minikube
       run:
-        make step-1
+        make step-4
     - name: Display pods
       run:
         kubectl get pods
