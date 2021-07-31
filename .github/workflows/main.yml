@@ -13,5 +13,7 @@ jobs:
         kubectl get pods
     - name: Edit host file
       run:
-        sed -i 's/magento2.local/magento.local/g' C:\Windows\System32\drivers\etc\hosts
+        Add-Content C:\Windows\System32\drivers\etc\hosts "`nMINIKUBE_IP"
+      env:
+          MINIKUBE_IP: minikube ip
      
