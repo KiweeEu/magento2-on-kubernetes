@@ -5,13 +5,16 @@ jobs:
     runs-on: self-hosted
     name: deploy magento to minikube local 3
     steps:
+    - name: Create folder vendor/ec-on-k8s
+      run:
+        mkdir -p vendor/ec-on-k8s
     - name: Deploy to minikube
       run:
-        make step-4
+        make step-1
     - name: Display pods
       run:
         kubectl get pods
-    - name: Edit host file
+    - name: Edit host file 
       run:
         Add-Content C:\Windows\System32\drivers\etc\hosts "`n"MINIKUBE_IP
       env:
