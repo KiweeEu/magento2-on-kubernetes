@@ -13,7 +13,7 @@ jobs:
         kubectl get pods
     - name: Edit host file
       run:
-        Add-Content C:\Windows\System32\drivers\etc\hosts "`nMINIKUBE_IP"
+        Add-Content C:\Windows\System32\drivers\etc\hosts "`n"MINIKUBE_IP
       env:
           MINIKUBE_IP: minikube ip
      
