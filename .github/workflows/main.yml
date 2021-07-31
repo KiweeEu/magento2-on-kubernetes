@@ -11,4 +11,7 @@ jobs:
     - name: Display pods
       run:
         kubectl get pods
+    - name: Edit host file
+      run:
+        sed -i 's/magento2.local/magento.local/g' C:\Windows\System32\drivers\etc\hosts
      
