@@ -10,9 +10,9 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "version": "2.3.7",
+    "version": "2.3.7-p1",
     "require": {
-        "magento/product-community-edition": "2.3.7",
+        "magento/product-community-edition": "2.3.7-p1",
         "magento/composer-root-update-plugin": "~1.1"
     },
     "autoload": {
