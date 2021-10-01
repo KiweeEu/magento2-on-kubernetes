@@ -17,7 +17,7 @@ spec:
         spec:
           containers:
           - name: magento-cron
-            image: kiweeteam/magento2:2.3.6-p1-1
+            image: kiweeteam/magento2:2.3.7-1
             command: ["/bin/sh"]
             args:
             - -c

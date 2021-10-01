@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - image: nginx:mainline
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: magento-web
         ports:
         - containerPort: 80

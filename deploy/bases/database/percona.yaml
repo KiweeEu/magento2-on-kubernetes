@@ -65,7 +65,7 @@ spec:
           requests:
             cpu: 100m
             memory: 256Mi
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
       restartPolicy: Always
       volumes:
       - name: mycnf

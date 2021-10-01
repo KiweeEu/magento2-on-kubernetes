@@ -1,4 +1,4 @@
-FROM php:7.3-fpm as base
+FROM php:7.4-fpm as base
 
 ENV COMPOSER_HOME=/tmp/composer
 ENV APCU_VERSION=5.1.18
@@ -20,23 +20,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
 
 RUN pecl install apcu-${APCU_VERSION}
 
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
-RUN docker-php-ext-install \
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
+RUN docker-php-ext-install -j "$(nproc)" \
     bcmath \
-    ctype \
-    dom \
     gd \
-    hash \
-    iconv \
     intl \
-    mbstring \
     mysqli \
     opcache \
     pdo_mysql \
-    simplexml \
     sockets \
     soap \
-    sodium \
     xsl \
     zip \
     ;
@@ -62,8 +55,7 @@ WORKDIR /var/www/html
 
 ARG COMPOSER_AUTH
 
-COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
-RUN composer global require hirak/prestissimo
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 COPY --chown=www-data composer.json composer.json
 COPY --chown=www-data composer.lock composer.lock

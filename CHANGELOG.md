@@ -7,7 +7,11 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
-## Unreleased
+## [2.3.7-1] - 2021-10-01
+### Changed
+- Update Magento to 2.3.7
+- Remove Kubernetes Jobs after completion
+- Set `imagePullPolicy` to `IfNotPresent` everywhere
 
 ## [2.3.6-p1-1] - 2021-03-04
 ### Added

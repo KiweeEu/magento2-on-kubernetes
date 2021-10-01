@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: magento-unpack
 spec:
+  ttlSecondsAfterFinished: 60
   template:
     metadata:
       name: unpack
@@ -12,7 +13,7 @@ spec:
     spec:
       containers:
       - name: magento-unpack
-        image: kiweeteam/magento2:2.3.6-p1-1
+        image: kiweeteam/magento2:2.3.7-1
         command: ["/bin/sh"]
         args:
         - -c
@@ -25,7 +26,7 @@ spec:
         volumeMounts:
         - name: static
           mountPath: /tmp/static
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
       restartPolicy: OnFailure
       volumes:
       - name: static
