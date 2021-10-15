@@ -7,6 +7,11 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## [2.3.7-p2-1] - 2021-10-15
+### Changed
+- Update Magento to 2.3.7-p2
+- Add --ignore-db-dir=lost+found option to Percona
+
 ## [2.3.7-p1-1] - 2021-10-01
 ### Changed
 - Update Magento to 2.3.7-p1

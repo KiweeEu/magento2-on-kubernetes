@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dfb09507dfe03fdc7b724b1f68c33cc",
+    "content-hash": "1e29f1ee792f41fe7d7ab3efbf007003",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -1719,16 +1719,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
                 "shasum": ""
             },
             "require": {
@@ -1740,7 +1740,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -1757,9 +1757,24 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle promises library",
@@ -1768,22 +1783,36 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+                "source": "https://github.com/guzzle/promises/tree/1.5.0"
             },
-            "time": "2021-03-07T09:25:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/promises",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-07T13:05:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.8.2",
+            "version": "1.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91"
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc960a912984efb74d0a90222870c72c87f10c91",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
                 "shasum": ""
             },
             "require": {
@@ -1821,12 +1850,33 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
                     "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
                 }
             ],
@@ -1843,9 +1893,23 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/1.8.2"
+                "source": "https://github.com/guzzle/psr7/tree/1.8.3"
             },
-            "time": "2021-04-26T09:17:50+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-05T13:56:00+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1919,16 +1983,16 @@
         },
         {
             "name": "klarna/m2-payments",
-            "version": "7.7.0",
+            "version": "7.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/m2-payments/klarna-m2-payments-7.7.0.0.zip",
-                "shasum": "beffe6749ee566f8f2d9d944ed76f1608d9a7929"
+                "url": "https://repo.magento.com/archives/klarna/m2-payments/klarna-m2-payments-7.7.1.0.zip",
+                "shasum": "d004fdc57af299307d62d70f0758747c63beda5d"
             },
             "require": {
-                "klarna/module-core": "5.4.0",
-                "klarna/module-kp": "6.6.0",
-                "klarna/module-ordermanagement": "5.2.0"
+                "klarna/module-core": "5.4.1",
+                "klarna/module-kp": "6.6.1",
+                "klarna/module-ordermanagement": "5.2.1"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "~2.16.0",
@@ -1954,14 +2018,15 @@
         },
         {
             "name": "klarna/module-core",
-            "version": "5.4.0",
+            "version": "5.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/klarna/module-core/klarna-module-core-5.4.0.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/klarna/module-core/klarna-module-core-5.4.1.zip"
             },
             "require": {
-                "guzzlehttp/guzzle": "^6.0",
+                "guzzlehttp/guzzle": "^6.3.3",
                 "magento/framework": "^102.0",
+                "magento/module-backend": "*",
                 "magento/module-bundle": "^100.3",
                 "magento/module-catalog": "^103.0",
                 "magento/module-config": "^101.1",
@@ -1978,25 +2043,57 @@
             },
             "type": "magento2-module",
             "autoload": {
-                "psr-4": {
-                    "Klarna\\Core\\": "."
-                },
                 "files": [
                     "registration.php"
-                ]
+                ],
+                "psr-4": {
+                    "Klarna\\Core\\": "."
+                }
             },
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
             "license": [
                 "Apache-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kenny Gilles",
+                    "email": "kenny.gilles@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Fei Chen",
+                    "email": "fei.chen@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Grim",
+                    "email": "jason.grim@klarna.com",
+                    "role": "Developer"
+                }
+            ],
             "description": "Klarna Core Magento 2 Extension"
         },
         {
             "name": "klarna/module-kp",
-            "version": "6.6.0",
+            "version": "6.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/klarna/module-kp/klarna-module-kp-6.6.0.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/klarna/module-kp/klarna-module-kp-6.6.1.zip"
             },
             "require": {
                 "klarna/module-core": "^5.4",
@@ -2015,25 +2112,62 @@
             },
             "type": "magento2-module",
             "autoload": {
-                "psr-4": {
-                    "Klarna\\Kp\\": ""
-                },
                 "files": [
                     "registration.php"
-                ]
+                ],
+                "psr-4": {
+                    "Klarna\\Kp\\": ""
+                }
             },
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
             "license": [
                 "Apache-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kenny Gilles",
+                    "email": "kenny.gilles@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Fei Chen",
+                    "email": "fei.chen@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Grim",
+                    "email": "jason.grim@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Christian Jung",
+                    "email": "christian.jung@klarna.com",
+                    "role": "Developer"
+                }
+            ],
             "description": "Klarna Payments Magento 2 Extension"
         },
         {
             "name": "klarna/module-ordermanagement",
-            "version": "5.2.0",
+            "version": "5.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/klarna/module-ordermanagement/klarna-module-ordermanagement-5.2.0.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/klarna/module-ordermanagement/klarna-module-ordermanagement-5.2.1.zip"
             },
             "require": {
                 "klarna/module-core": "^5.4",
@@ -2046,46 +2180,77 @@
             },
             "type": "magento2-module",
             "autoload": {
-                "psr-4": {
-                    "Klarna\\Ordermanagement\\": "."
-                },
                 "files": [
                     "registration.php"
-                ]
+                ],
+                "psr-4": {
+                    "Klarna\\Ordermanagement\\": "."
+                }
             },
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
             "license": [
                 "Apache-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kenny Gilles",
+                    "email": "kenny.gilles@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Fei Chen",
+                    "email": "fei.chen@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Grim",
+                    "email": "jason.grim@klarna.com",
+                    "role": "Developer"
+                }
+            ],
             "description": "Klarna Order Management Magento 2 Extension"
         },
         {
             "name": "laminas/laminas-captcha",
-            "version": "2.10.0",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-captcha.git",
-                "reference": "9a0134e434cd792934ecca42cb66f316be7bba50"
+                "reference": "6b0b98d388b713119cbb5788ea0b90cd6e63513a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-captcha/zipball/9a0134e434cd792934ecca42cb66f316be7bba50",
-                "reference": "9a0134e434cd792934ecca42cb66f316be7bba50",
+                "url": "https://api.github.com/repos/laminas/laminas-captcha/zipball/6b0b98d388b713119cbb5788ea0b90cd6e63513a",
+                "reference": "6b0b98d388b713119cbb5788ea0b90cd6e63513a",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-math": "^2.7 || ^3.0",
-                "laminas/laminas-stdlib": "^3.3",
-                "laminas/laminas-zendframework-bridge": "^1.1",
-                "php": "^7.3 || ~8.0.0"
+                "laminas/laminas-stdlib": "^3.6",
+                "php": "^7.3 || ~8.0.0 || ~8.1.0"
             },
-            "replace": {
-                "zendframework/zend-captcha": "^2.9.0"
+            "conflict": {
+                "zendframework/zend-captcha": "*"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~2.1.4",
                 "laminas/laminas-recaptcha": "^3.0",
-                "laminas/laminas-session": "^2.10",
+                "laminas/laminas-session": "^2.12",
                 "laminas/laminas-text": "^2.8",
                 "laminas/laminas-validator": "^2.14",
                 "phpunit/phpunit": "^9.4.3",
@@ -2129,7 +2294,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-03-17T16:42:11+00:00"
+            "time": "2021-10-01T15:30:12+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -3186,16 +3351,16 @@
         },
         {
             "name": "laminas/laminas-i18n",
-            "version": "2.11.2",
+            "version": "2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-i18n.git",
-                "reference": "78adb53ebf6c0bc63f92273fd7809dabc554f786"
+                "reference": "563b1b720ee53f2748473656a250d65911fc4462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-i18n/zipball/78adb53ebf6c0bc63f92273fd7809dabc554f786",
-                "reference": "78adb53ebf6c0bc63f92273fd7809dabc554f786",
+                "url": "https://api.github.com/repos/laminas/laminas-i18n/zipball/563b1b720ee53f2748473656a250d65911fc4462",
+                "reference": "563b1b720ee53f2748473656a250d65911fc4462",
                 "shasum": ""
             },
             "require": {
@@ -3222,12 +3387,12 @@
                 "phpunit/phpunit": "^9.3"
             },
             "suggest": {
-                "laminas/laminas-cache": "Laminas\\Cache component",
-                "laminas/laminas-config": "Laminas\\Config component",
+                "laminas/laminas-cache": "You should install this package to cache the translations",
+                "laminas/laminas-config": "You should install this package to use the INI translation format",
                 "laminas/laminas-eventmanager": "You should install this package to use the events in the translator",
                 "laminas/laminas-filter": "You should install this package to use the provided filters",
-                "laminas/laminas-i18n-resources": "Translation resources",
-                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component",
+                "laminas/laminas-i18n-resources": "This package provides validator and captcha translations",
+                "laminas/laminas-servicemanager": "You should install this package to use the translator",
                 "laminas/laminas-validator": "You should install this package to use the provided validators",
                 "laminas/laminas-view": "You should install this package to use the provided view helpers"
             },
@@ -3267,7 +3432,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-08-20T08:23:04+00:00"
+            "time": "2021-10-13T08:07:28+00:00"
         },
         {
             "name": "laminas/laminas-inputfilter",
@@ -4767,23 +4932,23 @@
         },
         {
             "name": "magento/adobe-stock-integration",
-            "version": "1.0.3",
+            "version": "1.0.3-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/adobe-stock-integration/magento-adobe-stock-integration-1.0.3.0.zip",
-                "shasum": "fd1aedd795525ed611534fbb10e3f2cd2b6d19ee"
+                "url": "https://repo.magento.com/archives/magento/adobe-stock-integration/magento-adobe-stock-integration-1.0.3.0-patch1.zip",
+                "shasum": "8c72a354b6fa2b59d1def48d9ec5662fb3546efd"
             },
             "require": {
-                "magento/module-adobe-ims": "1.0.2",
-                "magento/module-adobe-ims-api": "1.0.2",
-                "magento/module-adobe-stock-admin-ui": "1.0.2",
-                "magento/module-adobe-stock-asset": "1.0.2",
-                "magento/module-adobe-stock-asset-api": "1.0.2",
-                "magento/module-adobe-stock-client": "1.0.2",
-                "magento/module-adobe-stock-client-api": "1.0.2",
-                "magento/module-adobe-stock-image": "1.0.2",
-                "magento/module-adobe-stock-image-admin-ui": "1.0.3",
-                "magento/module-adobe-stock-image-api": "1.0.2"
+                "magento/module-adobe-ims": "1.0.2-p1",
+                "magento/module-adobe-ims-api": "1.0.2-p1",
+                "magento/module-adobe-stock-admin-ui": "1.0.2-p1",
+                "magento/module-adobe-stock-asset": "1.0.2-p1",
+                "magento/module-adobe-stock-asset-api": "1.0.2-p1",
+                "magento/module-adobe-stock-client": "1.0.2-p1",
+                "magento/module-adobe-stock-client-api": "1.0.2-p1",
+                "magento/module-adobe-stock-image": "1.0.2-p1",
+                "magento/module-adobe-stock-image-admin-ui": "1.0.3-p1",
+                "magento/module-adobe-stock-image-api": "1.0.2-p1"
             },
             "type": "metapackage",
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
@@ -4819,32 +4984,43 @@
         },
         {
             "name": "magento/composer-root-update-plugin",
-            "version": "v1.1.2-patch1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/davidverholen/evil-test-repo.git",
-                "reference": "2f4a34bd385c8059d565d2bf9dce7dff9b93746f"
-            },
+            "version": "1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidverholen/evil-test-repo/zipball/2f4a34bd385c8059d565d2bf9dce7dff9b93746f",
-                "reference": "2f4a34bd385c8059d565d2bf9dce7dff9b93746f",
-                "shasum": ""
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/composer-root-update-plugin/magento-composer-root-update-plugin-1.1.2.zip"
             },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "support": {
-                "issues": "https://github.com/davidverholen/evil-test-repo/issues",
-                "source": "https://github.com/davidverholen/evil-test-repo/tree/v1.1.2-patch1"
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "composer/composer": "<=1.11 || >=2.0.0 <=2.1"
             },
-            "time": "2021-08-12T20:22:50+00:00"
+            "suggest": {
+                "magento/framework": "Enables the Magento Composer Root Update Plugin's functionality for the Web Setup Wizard"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Magento\\ComposerRootUpdatePlugin\\Plugin\\PluginDefinition"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Magento\\ComposerRootUpdatePlugin\\": ""
+                },
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Plugin to look ahead for Magento project root changes when running composer update for new Magento versions"
         },
         {
             "name": "magento/framework",
-            "version": "102.0.7-p1",
+            "version": "102.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/framework/magento-framework-102.0.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/framework/magento-framework-102.0.7-p2.zip"
             },
             "require": {
                 "colinmollenhour/php-redis-session-abstract": "~1.4.0",
@@ -5343,10 +5519,10 @@
         },
         {
             "name": "magento/magento2-base",
-            "version": "2.3.7-p1",
+            "version": "2.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/magento2-base/magento-magento2-base-2.3.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/magento2-base/magento-magento2-base-2.3.7-p2.zip"
             },
             "require": {
                 "composer/composer": "^1.9 || ^2.0",
@@ -5913,10 +6089,10 @@
         },
         {
             "name": "magento/module-admin-analytics",
-            "version": "100.3.3",
+            "version": "100.3.3-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-admin-analytics/magento-module-admin-analytics-100.3.3.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-admin-analytics/magento-module-admin-analytics-100.3.3-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -5978,14 +6154,14 @@
         },
         {
             "name": "magento/module-adobe-ims",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-ims/magento-module-adobe-ims-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-ims/magento-module-adobe-ims-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
-                "magento/module-adobe-ims-api": "1.0.*",
+                "magento/module-adobe-ims-api": "1.0.2-p1",
                 "magento/module-authorization": "*",
                 "magento/module-backend": "*",
                 "magento/module-config": "*",
@@ -6010,10 +6186,10 @@
         },
         {
             "name": "magento/module-adobe-ims-api",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-ims-api/magento-module-adobe-ims-api-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-ims-api/magento-module-adobe-ims-api-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
@@ -6037,15 +6213,15 @@
         },
         {
             "name": "magento/module-adobe-stock-admin-ui",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-admin-ui/magento-module-adobe-stock-admin-ui-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-admin-ui/magento-module-adobe-stock-admin-ui-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
-                "magento/module-adobe-ims-api": "1.0.*",
-                "magento/module-adobe-stock-client-api": "1.0.*",
+                "magento/module-adobe-ims-api": "1.0.2-p1",
+                "magento/module-adobe-stock-client-api": "1.0.2-p1",
                 "magento/module-backend": "*",
                 "magento/module-config": "*",
                 "php": "~7.3.0||~7.4.0"
@@ -6071,15 +6247,15 @@
         },
         {
             "name": "magento/module-adobe-stock-asset",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-asset/magento-module-adobe-stock-asset-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-asset/magento-module-adobe-stock-asset-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
-                "magento/module-adobe-stock-asset-api": "1.0.*",
-                "magento/module-adobe-stock-client-api": "1.0.*",
+                "magento/module-adobe-stock-asset-api": "1.0.2-p1",
+                "magento/module-adobe-stock-client-api": "1.0.2-p1",
                 "magento/module-config": "*",
                 "magento/module-media-gallery": "*",
                 "magento/module-media-gallery-api": "*",
@@ -6103,10 +6279,10 @@
         },
         {
             "name": "magento/module-adobe-stock-asset-api",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-asset-api/magento-module-adobe-stock-asset-api-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-asset-api/magento-module-adobe-stock-asset-api-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
@@ -6130,16 +6306,16 @@
         },
         {
             "name": "magento/module-adobe-stock-client",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-client/magento-module-adobe-stock-client-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-client/magento-module-adobe-stock-client-1.0.2-p1.zip"
             },
             "require": {
                 "astock/stock-api-libphp": "^1.1.3",
                 "magento/framework": "*",
-                "magento/module-adobe-ims-api": "1.0.*",
-                "magento/module-adobe-stock-client-api": "1.0.*",
+                "magento/module-adobe-ims-api": "1.0.2-p1",
+                "magento/module-adobe-stock-client-api": "1.0.2-p1",
                 "php": "~7.3.0||~7.4.0"
             },
             "type": "magento2-module",
@@ -6160,10 +6336,10 @@
         },
         {
             "name": "magento/module-adobe-stock-client-api",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-client-api/magento-module-adobe-stock-client-api-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-client-api/magento-module-adobe-stock-client-api-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
@@ -6187,16 +6363,16 @@
         },
         {
             "name": "magento/module-adobe-stock-image",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-image/magento-module-adobe-stock-image-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-image/magento-module-adobe-stock-image-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
-                "magento/module-adobe-stock-asset-api": "1.0.*",
-                "magento/module-adobe-stock-client-api": "1.0.*",
-                "magento/module-adobe-stock-image-api": "1.0.*",
+                "magento/module-adobe-stock-asset-api": "1.0.2-p1",
+                "magento/module-adobe-stock-client-api": "1.0.2-p1",
+                "magento/module-adobe-stock-image-api": "1.0.2-p1",
                 "magento/module-media-gallery-api": "*",
                 "php": "~7.3.0||~7.4.0"
             },
@@ -6221,18 +6397,18 @@
         },
         {
             "name": "magento/module-adobe-stock-image-admin-ui",
-            "version": "1.0.3",
+            "version": "1.0.3-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-image-admin-ui/magento-module-adobe-stock-image-admin-ui-1.0.3.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-image-admin-ui/magento-module-adobe-stock-image-admin-ui-1.0.3-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
-                "magento/module-adobe-ims": "1.0.*",
-                "magento/module-adobe-ims-api": "1.0.*",
-                "magento/module-adobe-stock-asset-api": "1.0.*",
-                "magento/module-adobe-stock-client-api": "1.0.*",
-                "magento/module-adobe-stock-image-api": "1.0.*",
+                "magento/module-adobe-ims": "1.0.2-p1",
+                "magento/module-adobe-ims-api": "1.0.2-p1",
+                "magento/module-adobe-stock-asset-api": "1.0.2-p1",
+                "magento/module-adobe-stock-client-api": "1.0.2-p1",
+                "magento/module-adobe-stock-image-api": "1.0.2-p1",
                 "magento/module-backend": "*",
                 "magento/module-ui": "*",
                 "php": "~7.3.0||~7.4.0"
@@ -6258,10 +6434,10 @@
         },
         {
             "name": "magento/module-adobe-stock-image-api",
-            "version": "1.0.2",
+            "version": "1.0.2-p1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-image-api/magento-module-adobe-stock-image-api-1.0.2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-adobe-stock-image-api/magento-module-adobe-stock-image-api-1.0.2-p1.zip"
             },
             "require": {
                 "magento/framework": "*",
@@ -6691,10 +6867,10 @@
         },
         {
             "name": "magento/module-backup",
-            "version": "100.3.6-p1",
+            "version": "100.3.6-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-backup/magento-module-backup-100.3.6-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-backup/magento-module-backup-100.3.6-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -6721,10 +6897,10 @@
         },
         {
             "name": "magento/module-braintree",
-            "version": "100.3.7-p1",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-braintree/magento-module-braintree-100.3.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-braintree/magento-module-braintree-100.3.7-p2.zip"
             },
             "require": {
                 "braintree/braintree_php": "3.35.0",
@@ -7008,10 +7184,10 @@
         },
         {
             "name": "magento/module-catalog",
-            "version": "103.0.7-p1",
+            "version": "103.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-catalog/magento-module-catalog-103.0.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-catalog/magento-module-catalog-103.0.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -7236,10 +7412,10 @@
         },
         {
             "name": "magento/module-catalog-inventory",
-            "version": "100.3.7-p1",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-catalog-inventory/magento-module-catalog-inventory-100.3.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-catalog-inventory/magento-module-catalog-inventory-100.3.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -7664,10 +7840,10 @@
         },
         {
             "name": "magento/module-cms",
-            "version": "103.0.7-p1",
+            "version": "103.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-cms/magento-module-cms-103.0.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-cms/magento-module-cms-103.0.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -7868,10 +8044,10 @@
         },
         {
             "name": "magento/module-configurable-product",
-            "version": "100.3.7-p1",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-configurable-product/magento-module-configurable-product-100.3.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-configurable-product/magento-module-configurable-product-100.3.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -8073,10 +8249,10 @@
         },
         {
             "name": "magento/module-csp",
-            "version": "100.3.1-p1",
+            "version": "100.3.1-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-csp/magento-module-csp-100.3.1-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-csp/magento-module-csp-100.3.1-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -8133,10 +8309,10 @@
         },
         {
             "name": "magento/module-customer",
-            "version": "102.0.7-p1",
+            "version": "102.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-customer/magento-module-customer-102.0.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-customer/magento-module-customer-102.0.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -10953,10 +11129,10 @@
         },
         {
             "name": "magento/module-media-storage",
-            "version": "100.3.7",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-media-storage/magento-module-media-storage-100.3.7.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-media-storage/magento-module-media-storage-100.3.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -11109,10 +11285,10 @@
         },
         {
             "name": "magento/module-multishipping",
-            "version": "100.3.7-p1",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-multishipping/magento-module-multishipping-100.3.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-multishipping/magento-module-multishipping-100.3.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -11379,10 +11555,10 @@
         },
         {
             "name": "magento/module-paypal",
-            "version": "100.3.7-p1",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-paypal/magento-module-paypal-100.3.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-paypal/magento-module-paypal-100.3.7-p2.zip"
             },
             "require": {
                 "lib-libxml": "*",
@@ -11629,10 +11805,10 @@
         },
         {
             "name": "magento/module-quote",
-            "version": "101.1.7-p1",
+            "version": "101.1.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-quote/magento-module-quote-101.1.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-quote/magento-module-quote-101.1.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -11702,10 +11878,10 @@
         },
         {
             "name": "magento/module-quote-graph-ql",
-            "version": "100.3.7",
+            "version": "100.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-quote-graph-ql/magento-module-quote-graph-ql-100.3.7.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-quote-graph-ql/magento-module-quote-graph-ql-100.3.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -12037,10 +12213,10 @@
         },
         {
             "name": "magento/module-sales",
-            "version": "102.0.7-p1",
+            "version": "102.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-sales/magento-module-sales-102.0.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-sales/magento-module-sales-102.0.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -12319,10 +12495,10 @@
         },
         {
             "name": "magento/module-security",
-            "version": "100.3.6-p1",
+            "version": "100.3.6-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-security/magento-module-security-100.3.6-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-security/magento-module-security-100.3.6-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -12539,10 +12715,10 @@
         },
         {
             "name": "magento/module-store",
-            "version": "101.0.7-p1",
+            "version": "101.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-store/magento-module-store-101.0.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-store/magento-module-store-101.0.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -12898,10 +13074,10 @@
         },
         {
             "name": "magento/module-theme",
-            "version": "101.0.7",
+            "version": "101.0.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-theme/magento-module-theme-101.0.7.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-theme/magento-module-theme-101.0.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -13245,10 +13421,10 @@
         },
         {
             "name": "magento/module-variable",
-            "version": "100.3.5",
+            "version": "100.3.5-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-variable/magento-module-variable-100.3.5.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-variable/magento-module-variable-100.3.5-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -13276,10 +13452,10 @@
         },
         {
             "name": "magento/module-vault",
-            "version": "101.1.7-p1",
+            "version": "101.1.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-vault/magento-module-vault-101.1.7-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-vault/magento-module-vault-101.1.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -13365,10 +13541,10 @@
         },
         {
             "name": "magento/module-webapi",
-            "version": "100.3.6-p1",
+            "version": "100.3.6-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-webapi/magento-module-webapi-100.3.6-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-webapi/magento-module-webapi-100.3.6-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -13536,10 +13712,10 @@
         },
         {
             "name": "magento/module-widget",
-            "version": "101.1.6-p1",
+            "version": "101.1.5-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-widget/magento-module-widget-101.1.6-p1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-widget/magento-module-widget-101.1.5-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -13572,10 +13748,10 @@
         },
         {
             "name": "magento/module-wishlist",
-            "version": "101.1.7",
+            "version": "101.1.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-wishlist/magento-module-wishlist-101.1.7.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/module-wishlist/magento-module-wishlist-101.1.7-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -13677,11 +13853,11 @@
         },
         {
             "name": "magento/product-community-edition",
-            "version": "2.3.7-p1",
+            "version": "2.3.7-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/product-community-edition/magento-product-community-edition-2.3.7.0-patch1.zip",
-                "shasum": "2ef3214ec7a36dabc74a4b22f53ac985f584aa11"
+                "url": "https://repo.magento.com/archives/magento/product-community-edition/magento-product-community-edition-2.3.7.0-patch2.zip",
+                "shasum": "3f7dd60159969c0aa4a2a0ecca9e61bbd090bccd"
             },
             "require": {
                 "amzn/amazon-pay-and-login-magento-2-module": "3.9.2",
@@ -13709,7 +13885,7 @@
                 "ext-xsl": "*",
                 "ext-zip": "*",
                 "guzzlehttp/guzzle": "^6.3.3",
-                "klarna/m2-payments": "7.7.0",
+                "klarna/m2-payments": "7.7.1",
                 "laminas/laminas-captcha": "^2.7.1",
                 "laminas/laminas-code": "~3.4.1",
                 "laminas/laminas-config": "^2.6.0",
@@ -13741,9 +13917,9 @@
                 "laminas/laminas-validator": "^2.6.0",
                 "laminas/laminas-view": "~2.11.2",
                 "lib-libxml": "*",
-                "magento/adobe-stock-integration": "1.0.3",
+                "magento/adobe-stock-integration": "1.0.3-p1",
                 "magento/composer": "~1.6.0||~1.7.0",
-                "magento/framework": "102.0.7-p1",
+                "magento/framework": "102.0.7-p2",
                 "magento/framework-amqp": "100.3.6",
                 "magento/framework-bulk": "100.3.6",
                 "magento/framework-message-queue": "100.3.7",
@@ -13757,8 +13933,8 @@
                 "magento/language-pt_br": "100.3.4",
                 "magento/language-zh_hans_cn": "100.3.4",
                 "magento/magento-composer-installer": ">=0.1.11",
-                "magento/magento2-base": "2.3.7-p1",
-                "magento/module-admin-analytics": "100.3.3",
+                "magento/magento2-base": "2.3.7-p2",
+                "magento/module-admin-analytics": "100.3.3-p2",
                 "magento/module-admin-notification": "100.3.6",
                 "magento/module-advanced-pricing-import-export": "100.3.5",
                 "magento/module-advanced-search": "100.3.5",
@@ -13772,8 +13948,8 @@
                 "magento/module-authorizenet-cardinal": "100.3.2",
                 "magento/module-authorizenet-graph-ql": "100.3.3",
                 "magento/module-backend": "101.0.7",
-                "magento/module-backup": "100.3.6-p1",
-                "magento/module-braintree": "100.3.7-p1",
+                "magento/module-backup": "100.3.6-p2",
+                "magento/module-braintree": "100.3.7-p2",
                 "magento/module-braintree-graph-ql": "100.3.4",
                 "magento/module-bundle": "100.3.7",
                 "magento/module-bundle-graph-ql": "100.3.5",
@@ -13781,13 +13957,13 @@
                 "magento/module-cache-invalidate": "100.3.5",
                 "magento/module-captcha": "100.3.7",
                 "magento/module-cardinal-commerce": "100.3.3",
-                "magento/module-catalog": "103.0.7-p1",
+                "magento/module-catalog": "103.0.7-p2",
                 "magento/module-catalog-analytics": "100.3.5",
                 "magento/module-catalog-cms-graph-ql": "100.3.1",
                 "magento/module-catalog-customer-graph-ql": "100.3.1",
                 "magento/module-catalog-graph-ql": "100.3.7",
                 "magento/module-catalog-import-export": "101.0.7",
-                "magento/module-catalog-inventory": "100.3.7-p1",
+                "magento/module-catalog-inventory": "100.3.7-p2",
                 "magento/module-catalog-inventory-graph-ql": "100.3.5",
                 "magento/module-catalog-rule": "101.1.7",
                 "magento/module-catalog-rule-configurable": "100.3.6",
@@ -13799,21 +13975,21 @@
                 "magento/module-checkout": "100.3.7",
                 "magento/module-checkout-agreements": "100.3.6",
                 "magento/module-checkout-agreements-graph-ql": "100.3.2",
-                "magento/module-cms": "103.0.7-p1",
+                "magento/module-cms": "103.0.7-p2",
                 "magento/module-cms-graph-ql": "100.3.5",
                 "magento/module-cms-url-rewrite": "100.3.6",
                 "magento/module-cms-url-rewrite-graph-ql": "100.3.5",
                 "magento/module-config": "101.1.7",
                 "magento/module-configurable-import-export": "100.3.5",
-                "magento/module-configurable-product": "100.3.7-p1",
+                "magento/module-configurable-product": "100.3.7-p2",
                 "magento/module-configurable-product-graph-ql": "100.3.6",
                 "magento/module-configurable-product-sales": "100.3.5",
                 "magento/module-contact": "100.3.7",
                 "magento/module-cookie": "100.3.6",
                 "magento/module-cron": "100.3.6",
-                "magento/module-csp": "100.3.1-p1",
+                "magento/module-csp": "100.3.1-p2",
                 "magento/module-currency-symbol": "100.3.6",
-                "magento/module-customer": "102.0.7-p1",
+                "magento/module-customer": "102.0.7-p2",
                 "magento/module-customer-analytics": "100.3.5",
                 "magento/module-customer-downloadable-graph-ql": "100.3.1",
                 "magento/module-customer-graph-ql": "100.3.6",
@@ -13852,12 +14028,12 @@
                 "magento/module-marketplace": "100.3.5",
                 "magento/module-media-gallery": "100.3.2",
                 "magento/module-media-gallery-api": "100.3.1",
-                "magento/module-media-storage": "100.3.7",
+                "magento/module-media-storage": "100.3.7-p2",
                 "magento/module-message-queue": "100.3.7",
                 "magento/module-msrp": "100.3.6",
                 "magento/module-msrp-configurable-product": "100.3.4",
                 "magento/module-msrp-grouped-product": "100.3.5",
-                "magento/module-multishipping": "100.3.7-p1",
+                "magento/module-multishipping": "100.3.7-p2",
                 "magento/module-mysql-mq": "100.3.5",
                 "magento/module-new-relic-reporting": "100.3.5",
                 "magento/module-newsletter": "100.3.7",
@@ -13865,16 +14041,16 @@
                 "magento/module-offline-shipping": "100.3.6",
                 "magento/module-page-cache": "100.3.7",
                 "magento/module-payment": "100.3.7",
-                "magento/module-paypal": "100.3.7-p1",
+                "magento/module-paypal": "100.3.7-p2",
                 "magento/module-paypal-captcha": "100.3.3",
                 "magento/module-paypal-graph-ql": "100.3.2",
                 "magento/module-paypal-recaptcha": "1.0.1",
                 "magento/module-persistent": "100.3.7",
                 "magento/module-product-alert": "100.3.7",
                 "magento/module-product-video": "100.3.7",
-                "magento/module-quote": "101.1.7-p1",
+                "magento/module-quote": "101.1.7-p2",
                 "magento/module-quote-analytics": "100.3.6",
-                "magento/module-quote-graph-ql": "100.3.7",
+                "magento/module-quote-graph-ql": "100.3.7-p2",
                 "magento/module-related-product-graph-ql": "100.3.2",
                 "magento/module-release-notification": "100.3.5",
                 "magento/module-reports": "100.3.7",
@@ -13884,7 +14060,7 @@
                 "magento/module-robots": "101.0.5",
                 "magento/module-rss": "100.3.5",
                 "magento/module-rule": "100.3.6",
-                "magento/module-sales": "102.0.7-p1",
+                "magento/module-sales": "102.0.7-p2",
                 "magento/module-sales-analytics": "100.3.5",
                 "magento/module-sales-graph-ql": "100.3.4",
                 "magento/module-sales-inventory": "100.3.5",
@@ -13892,13 +14068,13 @@
                 "magento/module-sales-sequence": "100.3.5",
                 "magento/module-sample-data": "100.3.5",
                 "magento/module-search": "101.0.7",
-                "magento/module-security": "100.3.6-p1",
+                "magento/module-security": "100.3.6-p2",
                 "magento/module-send-friend": "100.3.5",
                 "magento/module-send-friend-graph-ql": "100.3.4",
                 "magento/module-shipping": "100.3.7",
                 "magento/module-signifyd": "100.3.6",
                 "magento/module-sitemap": "100.3.7",
-                "magento/module-store": "101.0.7-p1",
+                "magento/module-store": "101.0.7-p2",
                 "magento/module-store-graph-ql": "100.3.5",
                 "magento/module-swagger": "100.3.6",
                 "magento/module-swagger-webapi": "100.3.5",
@@ -13909,7 +14085,7 @@
                 "magento/module-tax": "100.3.7",
                 "magento/module-tax-graph-ql": "100.3.5",
                 "magento/module-tax-import-export": "100.3.5",
-                "magento/module-theme": "101.0.7",
+                "magento/module-theme": "101.0.7-p2",
                 "magento/module-theme-graph-ql": "100.3.4",
                 "magento/module-tinymce-3": "100.3.7",
                 "magento/module-translation": "100.3.7",
@@ -13919,20 +14095,20 @@
                 "magento/module-url-rewrite-graph-ql": "100.3.7",
                 "magento/module-user": "101.1.7",
                 "magento/module-usps": "100.3.6",
-                "magento/module-variable": "100.3.5",
-                "magento/module-vault": "101.1.7-p1",
+                "magento/module-variable": "100.3.5-p2",
+                "magento/module-vault": "101.1.7-p2",
                 "magento/module-vault-graph-ql": "100.3.3",
                 "magento/module-version": "100.3.5",
-                "magento/module-webapi": "100.3.6-p1",
+                "magento/module-webapi": "100.3.6-p2",
                 "magento/module-webapi-async": "100.3.7",
                 "magento/module-webapi-security": "100.3.5",
                 "magento/module-weee": "100.3.6",
                 "magento/module-weee-graph-ql": "100.3.5",
-                "magento/module-widget": "101.1.6-p1",
-                "magento/module-wishlist": "101.1.7",
+                "magento/module-widget": "101.1.5-p2",
+                "magento/module-wishlist": "101.1.7-p2",
                 "magento/module-wishlist-analytics": "100.3.5",
                 "magento/module-wishlist-graph-ql": "100.3.4",
-                "magento/theme-adminhtml-backend": "100.3.6",
+                "magento/theme-adminhtml-backend": "100.3.6-p2",
                 "magento/theme-frontend-blank": "100.3.7",
                 "magento/theme-frontend-luma": "100.3.7",
                 "magento/zendframework1": "~1.14.2",
@@ -13952,10 +14128,10 @@
                 "tedivm/jshrink": "~1.3.0",
                 "temando/module-shipping": "2.0.0",
                 "tubalmartin/cssmin": "4.1.1",
-                "vertexinc/product-magento-module": "3.5.1",
+                "vertexinc/product-magento-module": "3.5.2",
                 "webonyx/graphql-php": "^0.13.8",
                 "wikimedia/less.php": "~1.8.0",
-                "yotpo/magento2-module-yotpo-reviews-bundle": "3.1.0-p2"
+                "yotpo/magento2-module-yotpo-reviews-bundle": "3.1.0-p3"
             },
             "type": "metapackage",
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
@@ -13967,10 +14143,10 @@
         },
         {
             "name": "magento/theme-adminhtml-backend",
-            "version": "100.3.6",
+            "version": "100.3.6-p2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/theme-adminhtml-backend/magento-theme-adminhtml-backend-100.3.6.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/theme-adminhtml-backend/magento-theme-adminhtml-backend-100.3.6-p2.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -16717,10 +16893,10 @@
         },
         {
             "name": "vertexinc/module-address-validation",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/vertexinc/module-address-validation/vertexinc-module-address-validation-1.2.1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/vertexinc/module-address-validation/vertexinc-module-address-validation-1.2.2.zip"
             },
             "require": {
                 "ext-json": "*",
@@ -16735,9 +16911,6 @@
                 "php": "^7.0",
                 "vertexinc/module-address-validation-api": "^1",
                 "vertexinc/module-tax": "^3.5.0"
-            },
-            "replace": {
-                "vertex/module-address-validation": "self.version"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
@@ -16801,10 +16974,10 @@
         },
         {
             "name": "vertexinc/module-tax",
-            "version": "3.5.1",
+            "version": "3.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/vertexinc/module-tax/vertexinc-module-tax-3.5.1.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/vertexinc/module-tax/vertexinc-module-tax-3.5.2.zip"
             },
             "require": {
                 "ext-intl": "*",
@@ -16834,9 +17007,6 @@
                 "pixafy/tax-ee": "*",
                 "vertex/tax": "*",
                 "vertex/tax-ee": "*"
-            },
-            "replace": {
-                "vertex/module-tax": "self.version"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
@@ -16868,15 +17038,15 @@
         },
         {
             "name": "vertexinc/product-magento-module",
-            "version": "3.5.1",
+            "version": "3.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/vertexinc/product-magento-module/vertexinc-product-magento-module-3.5.1.0.zip",
-                "shasum": "6eb558e4c1eae79f535634987c83778a94bc2f3d"
+                "url": "https://repo.magento.com/archives/vertexinc/product-magento-module/vertexinc-product-magento-module-3.5.2.0.zip",
+                "shasum": "38773a0a4d07836b6391b2225779d8f308dd96f3"
             },
             "require": {
-                "vertexinc/module-address-validation": "1.2.1",
-                "vertexinc/module-tax": "3.5.1"
+                "vertexinc/module-address-validation": "1.2.2",
+                "vertexinc/module-tax": "3.5.2"
             },
             "replace": {
                 "vertex/product-magento-module": "self.version"
@@ -16885,6 +17055,14 @@
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",
             "license": [
                 "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Mediotype",
+                    "email": "diveinto@mediotype.com",
+                    "homepage": "http://www.mediotype.com/",
+                    "role": "Development Company"
+                }
             ],
             "description": "Vertex Tax Links for Magento 2",
             "homepage": "http://go.vertexsmb.com/magento_cbe",
@@ -16895,10 +17073,10 @@
         },
         {
             "name": "vertexinc/sdk",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/vertexinc/sdk/vertexinc-sdk-1.2.7.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/vertexinc/sdk/vertexinc-sdk-1.2.8.zip"
             },
             "require": {
                 "ext-mbstring": "*",
@@ -17174,10 +17352,10 @@
         },
         {
             "name": "yotpo/magento2-module-yotpo-reviews",
-            "version": "3.1.0-p2",
+            "version": "3.1.0-p3",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/yotpo/magento2-module-yotpo-reviews/yotpo-magento2-module-yotpo-reviews-3.1.0-p2.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/yotpo/magento2-module-yotpo-reviews/yotpo-magento2-module-yotpo-reviews-3.1.0-p3.zip"
             },
             "require": {
                 "magento/framework": "102.0.*",
@@ -17215,14 +17393,14 @@
         },
         {
             "name": "yotpo/magento2-module-yotpo-reviews-bundle",
-            "version": "3.1.0-p2",
+            "version": "3.1.0-p3",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/yotpo/magento2-module-yotpo-reviews-bundle/yotpo-magento2-module-yotpo-reviews-bundle-3.1.0.0-patch2.zip",
-                "shasum": "76f400808bd7d0d1c1a1dd055efbcc3229f92754"
+                "url": "https://repo.magento.com/archives/yotpo/magento2-module-yotpo-reviews-bundle/yotpo-magento2-module-yotpo-reviews-bundle-3.1.0.0-patch3.zip",
+                "shasum": "2e71170b41d5ec0b29058e7f65099f98d71c09f1"
             },
             "require": {
-                "yotpo/magento2-module-yotpo-reviews": "3.1.0-p2"
+                "yotpo/magento2-module-yotpo-reviews": "3.1.0-p3"
             },
             "type": "metapackage",
             "notification-url": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/",

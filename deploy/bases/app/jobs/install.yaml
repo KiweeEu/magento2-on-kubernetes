@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: magento-setup
-        image: kiweeteam/magento2:2.3.7-p1-1
+        image: kiweeteam/magento2:2.3.7-p2-1
         command: ["/bin/sh"]
         args:
         - -c
