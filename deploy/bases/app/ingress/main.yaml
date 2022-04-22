@@ -1,11 +1,18 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  name: main
   annotations:
     kubernetes.io/ingress.class: "nginx"
     kubernetes.io/tls-acme: "false"
-  name: main
 spec:
-  backend:
-    serviceName: magento-web
-    servicePort: http
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: magento-web
+            port:
+              name: http

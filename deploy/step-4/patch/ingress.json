@@ -1,12 +1,12 @@
 [
   {
     "op": "replace",
-    "path": "/spec/backend/serviceName",
+    "path": "/spec/rules/0/http/paths/0/backend/service/name",
     "value": "varnish"
   },
   {
     "op": "replace",
-    "path": "/spec/backend/servicePort",
+    "path": "/spec/rules/0/http/paths/0/backend/service/port/name",
     "value": "proxy"
   }
 ]

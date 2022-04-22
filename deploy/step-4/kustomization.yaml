@@ -11,7 +11,7 @@ patchesJson6902:
 - path: patch/ingress.json
   target:
     group: networking.k8s.io
-    version: v1beta1
+    version: v1
     kind: Ingress
     name: main
 
