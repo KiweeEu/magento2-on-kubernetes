@@ -10,6 +10,8 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 ## Unreleased
 ### Changed
 - Update Kubernetes to 1.21
+- Update Magento to 2.3.7-p3
+- Update Elasticsearch to 7.16
 
 ## [2.3.7-p2-1] - 2021-10-15
 ### Changed
