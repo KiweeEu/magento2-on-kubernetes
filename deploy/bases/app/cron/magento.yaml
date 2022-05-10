@@ -14,6 +14,22 @@ spec:
             app: magento-cron
             k8s-app: magento
         spec:
+          initContainers:
+          - name: wait-for-web
+            image: curlimages/curl
+            command: ["/bin/sh"]
+            args:
+            - -c
+            - |
+              while ! curl -kILSs --fail -XGET \
+                -H "Host: $(CONFIG__DEFAULT__WEB__COOKIE__COOKIE_DOMAIN)" \
+                $(MAGENTO_WEB_SERVICE_HOST):$(MAGENTO_WEB_SERVICE_PORT)/health_check.php
+              do echo "waiting for $(MAGENTO_WEB_SERVICE_HOST)"
+              sleep 1
+              done
+            envFrom:
+            - configMapRef:
+                name: config
           containers:
           - name: magento-cron
             image: kiweeteam/magento2:2.3.7-p2-1

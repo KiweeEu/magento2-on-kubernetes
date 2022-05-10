@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magento-php
+spec:
+  selector:
+    matchLabels:
+      app: magento-php
+  template:
+    spec:
+      containers:
+      - name: magento-php
+      initContainers:
+      - name: wait-for-redis
+        image: busybox
+        command: ["/bin/sh"]
+        args:
+          - -c
+          - |
+            while ! nc -v -w 3 \
+              $(REDIS_CACHE_HOST) \
+              $(REDIS_CACHE_PORT)
+            do echo "waiting for $(REDIS_CACHE_HOST)"
+            sleep 1
+            done
+        envFrom:
+        - configMapRef:
+            name: config
+        - configMapRef:
+            name: additional
+
+
+---
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: magento-install
+spec:
+  template:
+    spec:
+      containers:
+      - name: magento-setup
+      initContainers:
+      - name: wait-for-redis
+        image: busybox
+        command: ["/bin/sh"]
+        args:
+          - -c
+          - |
+            while ! nc -v -w 3 \
+              $(REDIS_CACHE_HOST) \
+              $(REDIS_CACHE_PORT)
+            do echo "waiting for $(REDIS_CACHE_HOST)"
+            sleep 1
+            done
+        envFrom:
+        - configMapRef:
+            name: config
+        - configMapRef:
+            name: additional

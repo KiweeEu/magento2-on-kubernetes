@@ -9,6 +9,9 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
 ## Unreleased
 ### Changed
+- Magento now waits for Elasticsearch before initializing
+- Magento now waits for Redis before initializing
+- Cron jobs now start after Magento web service is ready
 - Update Kubernetes to 1.21
 - Update Magento to 2.3.7-p3
 - Update Elasticsearch to 7.16
