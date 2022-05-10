@@ -1,0 +1,11 @@
+bases:
+  - ../kind
+
+patchesStrategicMerge:
+  - patches/magento-php.yaml
+
+configMapGenerator:
+- name: config
+  behavior: merge
+  envs:
+  - patches/common.env

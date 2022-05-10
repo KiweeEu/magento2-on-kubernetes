@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: magento-test
+spec:
+  ttlSecondsAfterFinished: 60
+  template:
+    metadata:
+      name: test
+      labels:
+        app: magento-test
+        k8s-app: magento
+    spec:
+      containers:
+      - name: magento-test
+        image: curlimages/curl
+        command: ["curl"]
+        args:
+        - -kILSs
+        - --fail
+        - $(INGRESS_NGINX_CONTROLLER_SERVICE_HOST)
+        envFrom:
+        - configMapRef:
+            name: config
+      restartPolicy: OnFailure

@@ -1,0 +1,11 @@
+bases:
+  - ../../deploy/step-4
+
+patchesStrategicMerge:
+  - patches/pvc.yaml
+
+configMapGenerator:
+- name: config
+  behavior: merge
+  envs:
+  - patches/common.env

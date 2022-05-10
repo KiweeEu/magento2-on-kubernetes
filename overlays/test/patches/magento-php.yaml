@@ -1,0 +1,6 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: magento-php
+spec:
+  minReplicas: 1
