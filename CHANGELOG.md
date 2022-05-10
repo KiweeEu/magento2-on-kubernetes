@@ -9,6 +9,7 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
 ## Unreleased
 ### Changed
+- Update ECK Operator to 1.9.1
 - Magento now waits for Elasticsearch before initializing
 - Magento now waits for Redis before initializing
 - Cron jobs now start after Magento web service is ready

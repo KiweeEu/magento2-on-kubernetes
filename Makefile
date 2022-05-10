@@ -4,7 +4,7 @@ KUBECTL = /usr/bin/env kubectl
 
 ELASTIC-OPERATOR-PATH := vendor/ec-on-k8s
 ELASTIC-OPERATOR-FILE := all-in-one.yaml
-ELASTIC-OPERATOR-URL := https://download.elastic.co/downloads/eck/1.4.0/all-in-one.yaml
+ELASTIC-OPERATOR-URL := https://download.elastic.co/downloads/eck/1.9.1/all-in-one.yaml
 
 $(ELASTIC-OPERATOR-PATH):
 	mkdir -p $(ELASTIC-OPERATOR-PATH)
