@@ -7,7 +7,7 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
-## Unreleased
+## [2.3.7-p3-1] - 2022-05-12
 ### Changed
 - Update ECK Operator to 1.9.1
 - Magento now waits for Elasticsearch before initializing
