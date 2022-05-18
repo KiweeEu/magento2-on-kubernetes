@@ -4,6 +4,14 @@ bases:
 patchesStrategicMerge:
   - patches/magento-php.yaml
 
+patchesJson6902:
+- target:
+    group: elasticsearch.k8s.elastic.co
+    version: v1
+    kind: Elasticsearch
+    name: elasticsearch
+  path: patches/elasticsearch.yaml
+
 configMapGenerator:
 - name: config
   behavior: merge
