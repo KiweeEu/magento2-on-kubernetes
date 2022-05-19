@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cypress
+spec:
+  ttlSecondsAfterFinished: 60
+  template:
+    metadata:
+      name: cypress
+      labels:
+        app: cypress
+        k8s-app: cypress
+    spec:
+      initContainers:
+      - name: wait-for-web
+        image: curlimages/curl
+        command: ["/bin/sh"]
+        args:
+        - -c
+        - |
+          while ! curl -kILSs --fail -XGET \
+            -H "Host: $(CONFIG__DEFAULT__WEB__COOKIE__COOKIE_DOMAIN)" \
+            $(INGRESS_NGINX_CONTROLLER_SERVICE_HOST)
+          do echo "waiting for $(CONFIG__DEFAULT__WEB__COOKIE__COOKIE_DOMAIN)"
+          sleep 1
+          done
+        envFrom:
+        - configMapRef:
+            name: config
+      containers:
+      - name: cypress
+        image: kiweeteam/magento2-cypress:latest
+        command: ["npm", "test"]
+        envFrom:
+        - configMapRef:
+            name: config
+      restartPolicy: OnFailure

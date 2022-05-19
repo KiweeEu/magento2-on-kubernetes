@@ -37,3 +37,7 @@ profiles:
       - op: replace
         path: /deploy/kustomize/paths/0
         value: overlays/test
+    build:
+      artifacts:
+      - image: kiweeteam/magento2-cypress
+        context: test/e2e

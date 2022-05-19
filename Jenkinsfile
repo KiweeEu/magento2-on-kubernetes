@@ -50,7 +50,7 @@ pipeline {
                 kubectl wait --timeout=120s --for=condition=available --all deployments
 
                 skaffold run --profile="ci"
-                kubectl wait --timeout=600s --for=condition=complete job/magento-install
+                kubectl wait --timeout=3600s --for=condition=complete job/cypress
                 kubectl get pods --all-namespaces
               """
             } // steps
@@ -60,6 +60,7 @@ pipeline {
                 sh """
                   kubectl get pods,pvc,deployments,statefulsets,jobs --all-namespaces
                   kubectl describe node
+                  kubectl logs job/cypress
                 """
               } // always
 

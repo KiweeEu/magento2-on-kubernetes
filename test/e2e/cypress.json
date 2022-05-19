@@ -1,0 +1,14 @@
+{
+  "baseUrl": "https://ingress-nginx-controller.default.svc.cluster.local/",
+  "testFiles": "**/*.{spec.js,feature}",
+  "defaultCommandTimeout": 30000,
+  "requestTimeout": 30000,
+  "pageLoadTimeout": 30000,
+  "video": false,
+  "viewportWidth": 1280,
+  "viewportHeight": 800,
+  "retries": {
+    "runMode": 0,
+    "openMode": 0
+  }
+}

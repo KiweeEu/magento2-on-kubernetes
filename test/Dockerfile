@@ -21,3 +21,8 @@ RUN curl -Lo ./skaffold https://storage.googleapis.com/skaffold/builds/latest/sk
     chmod +x ./skaffold && \
     mv ./skaffold /usr/bin/skaffold \
     ;
+
+RUN curl -L https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.4/kustomize_v4.5.4_linux_amd64.tar.gz | tar -xz && \
+    chmod +x ./kustomize && \
+    mv ./kustomize /usr/bin/kustomize \
+    ;
