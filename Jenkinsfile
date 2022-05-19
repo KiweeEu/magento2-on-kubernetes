@@ -49,21 +49,25 @@ pipeline {
                 helm install eck-operator eck-operator --version '1.9.1' --repo https://helm.elastic.co
                 kubectl wait --timeout=120s --for=condition=available --all deployments
 
-                kubectl apply -k overlays/test
-                kubectl wait --timeout=300s --for=condition=complete job/magento-install
-                kubectl wait --timeout=300s --for=condition=available --all deployments
+                skaffold run --profile="ci"
+                kubectl wait --timeout=600s --for=condition=complete job/magento-install
                 kubectl get pods --all-namespaces
               """
             } // steps
 
             post {
-              cleanup {
+              always {
                 sh """
                   kubectl get pods,pvc,deployments,statefulsets,jobs --all-namespaces
                   kubectl describe node
+                """
+              } // always
+
+              cleanup {
+                sh """
                   kind delete cluster --name='mok-${version}'
                 """
-              }
+              } // cleanup
             } // post
           } // stage "deployment"
         } // stages

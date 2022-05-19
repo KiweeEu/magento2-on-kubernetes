@@ -1,0 +1,39 @@
+apiVersion: skaffold/v2beta22
+kind: Config
+metadata:
+  name: magento--kubernetes
+build:
+  tagPolicy:
+    gitCommit: {}
+  artifacts:
+  - image: kiweeteam/magento2
+    context: src
+    sync:
+      infer:
+      - 'app/etc/config.php'
+      - 'composer.json'
+      - 'composer.lock'
+    docker:
+      dockerfile: Dockerfile
+      target: app
+  local:
+    useBuildkit: true
+deploy:
+  kustomize:
+    paths:
+      - overlays/kind
+portForward:
+  - resourceType: Service
+    resourceName: ingress-nginx-controller
+    port: 443
+    localPort: 8443
+  - resourceType: Service
+    resourceName: ingress-nginx-controller
+    port: 80
+    localPort: 8080
+profiles:
+  - name: ci
+    patches:
+      - op: replace
+        path: /deploy/kustomize/paths/0
+        value: overlays/test
