@@ -15,6 +15,10 @@ else you need to deploy Magento 2 on Kubernetes yourself.
 * Standalone version of [kustomize](https://kustomize.io/) v3.9.0 or newer
 * `make`
 
+## Compatibility
+
+This project is developed and tested using [kind](https://kind.sigs.k8s.io/) with the [latest supported patch versions of Kubernetes](https://kubernetes.io/releases/).
+
 ## Deployment
 
 Manifests in this repository can be deployed using `make`.
