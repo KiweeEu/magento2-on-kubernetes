@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
     libxslt-dev \
     libzip-dev \
     rsync \
+    supervisor \
     unzip \
     ;
 
@@ -47,8 +48,13 @@ RUN echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/zz-opcache.conf
 
 FROM base as build
 
+COPY etc/supervisord.conf /etc/supervisor/supervisord.conf
+
 RUN curl https://files.magerun.net/n98-magerun2.phar -o /usr/local/bin/magerun \
     && chmod 755 /usr/local/bin/magerun
+
+RUN mkdir -p /var/log/supervisor \
+    && chown www-data:www-data /var/log/supervisor
 
 USER www-data
 WORKDIR /var/www/html
@@ -65,6 +71,12 @@ RUN php -d memory_limit=2G $(which composer) install --no-progress --no-dev
 COPY --chown=www-data app/etc/config.php app/etc/config.php
 
 COPY --chown=www-data bin bin
+COPY bin/entrypoint.sh /usr/local/bin/docker-php-entrypoint
+
+
+FROM build as dev
+
+COPY --chown=www-data app/etc/env.docker.php app/etc/env.php
 
 FROM build as app
 

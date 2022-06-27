@@ -41,3 +41,13 @@ profiles:
       artifacts:
       - image: kiweeteam/magento2-cypress
         context: test/e2e
+      - image: kiweeteam/magento2
+        context: src
+        sync:
+          infer:
+          - 'app/etc/config.php'
+          - 'composer.json'
+          - 'composer.lock'
+        docker:
+          dockerfile: Dockerfile
+          target: app
