@@ -11,6 +11,10 @@ spec:
     port: 9000
     protocol: TCP
     targetPort: 9000
+  - name: "http"
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
   selector:
     app: magento-php
 
@@ -46,22 +50,26 @@ spec:
         ports:
         - containerPort: 9000
           protocol: TCP
+        - containerPort: 8080
+          protocol: TCP
         readinessProbe:
           failureThreshold: 5
-          initialDelaySeconds: 10
+          initialDelaySeconds: 30
           periodSeconds: 10
           successThreshold: 1
-          tcpSocket:
-            port: 9000
           timeoutSeconds: 1
+          httpGet:
+            path: /health_check.php
+            port: 8080
         livenessProbe:
           failureThreshold: 5
-          initialDelaySeconds: 10
+          initialDelaySeconds: 30
           periodSeconds: 10
           successThreshold: 1
-          tcpSocket:
-            port: 9000
           timeoutSeconds: 1
+          httpGet:
+            path: /health_check.php
+            port: 8080
         resources:
           limits:
             cpu: 250m

@@ -4,8 +4,8 @@ ENV COMPOSER_HOME=/tmp/composer
 ENV APCU_VERSION=5.1.18
 
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
+    nginx \
     netcat \
-    sudo \
     libicu-dev \
     libfreetype6-dev \
     libjpeg-dev \
@@ -46,9 +46,16 @@ RUN echo "opcache.consistency_checks=0" >> /usr/local/etc/php/conf.d/zz-opcache.
 RUN echo "opcache.validate_timestamps=0" >> /usr/local/etc/php/conf.d/zz-opcache.conf
 RUN echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/zz-opcache.conf
 
+RUN mkdir -p /var/lib/nginx/{body,fastcgi} && \
+    chown -R www-data:www-data /var/lib/nginx
+
+RUN touch /run/nginx.pid && \
+    chown www-data:www-data /run/nginx.pid
+
 FROM base as build
 
 COPY etc/supervisord.conf /etc/supervisor/supervisord.conf
+COPY etc/nginx /etc/nginx
 
 RUN curl https://files.magerun.net/n98-magerun2.phar -o /usr/local/bin/magerun \
     && chmod 755 /usr/local/bin/magerun
@@ -73,6 +80,7 @@ COPY --chown=www-data app/etc/config.php app/etc/config.php
 COPY --chown=www-data bin bin
 COPY bin/entrypoint.sh /usr/local/bin/docker-php-entrypoint
 
+EXPOSE 8080
 
 FROM build as dev
 
