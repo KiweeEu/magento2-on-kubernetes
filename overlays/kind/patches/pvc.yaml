@@ -5,13 +5,3 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-
----
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: static
-spec:
-  accessModes:
-  - ReadWriteOnce

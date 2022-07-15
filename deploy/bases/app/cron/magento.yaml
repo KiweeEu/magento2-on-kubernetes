@@ -23,8 +23,8 @@ spec:
             - |
               while ! curl -kILSs --fail -XGET \
                 -H "Host: $(CONFIG__DEFAULT__WEB__COOKIE__COOKIE_DOMAIN)" \
-                $(MAGENTO_WEB_SERVICE_HOST):$(MAGENTO_WEB_SERVICE_PORT)/health_check.php
-              do echo "waiting for $(MAGENTO_WEB_SERVICE_HOST)"
+                $(MAGENTO_PHP_SERVICE_HOST):$(MAGENTO_PHP_SERVICE_PORT_HTTP)/health_check.php
+              do echo "waiting for $(MAGENTO_PHP_SERVICE_HOST)"
               sleep 1
               done
             envFrom:

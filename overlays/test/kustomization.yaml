@@ -3,7 +3,7 @@ bases:
   - ../../test
 
 patchesStrategicMerge:
-  - patches/magento-php.yaml
+  - patches/magento-web.yaml
 
 patchesJson6902:
 - target:

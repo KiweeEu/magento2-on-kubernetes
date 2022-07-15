@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: magento-php
+  name: magento-web
 spec:
   selector:
     matchLabels:
-      app: magento-php
+      app: magento-web
   template:
     spec:
       containers:
-      - name: magento-php
+      - name: magento-web
       initContainers:
       - name: wait-for-redis
         image: busybox

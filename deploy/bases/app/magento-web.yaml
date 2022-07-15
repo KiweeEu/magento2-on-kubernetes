@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: magento-php
+  name: magento-web
   labels:
-    app: magento-php
+    app: magento-web
     k8s-app: magento
 spec:
   ports:
@@ -16,22 +16,22 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: magento-php
+    app: magento-web
 
 ---
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: magento-php
+  name: magento-web
   labels:
-    app: magento-php
+    app: magento-web
     k8s-app: magento
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: magento-php
+      app: magento-web
   strategy:
     rollingUpdate:
       maxSurge: 50%
@@ -40,13 +40,13 @@ spec:
   template:
     metadata:
       labels:
-        app: magento-php
+        app: magento-web
         k8s-app: magento
     spec:
       containers:
       - image: kiweeteam/magento2:2.3.7-p2-1
         imagePullPolicy: IfNotPresent
-        name: magento-php
+        name: magento-web
         ports:
         - containerPort: 9000
           protocol: TCP
@@ -87,8 +87,6 @@ spec:
           mountPath: /var/www/html/var/log
         - name: media
           mountPath: /var/www/html/pub/media
-        - name: static
-          mountPath: /var/www/html/pub/static
       - image: busybox
         imagePullPolicy: IfNotPresent
         name: system-log
@@ -155,6 +153,3 @@ spec:
       - name: media
         persistentVolumeClaim:
           claimName: media
-      - name: static
-        persistentVolumeClaim:
-          claimName: static

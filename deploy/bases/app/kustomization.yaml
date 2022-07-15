@@ -4,14 +4,11 @@ metadata:
   name: app
 
 resources:
-- php.yaml
-- web.yaml
+- magento-web.yaml
 - ingress/main.yaml
 - cron/magento.yaml
 - jobs/install.yaml
-- jobs/unpack.yaml
 - pvc/media.yaml
-- pvc/static.yaml
 
 configMapGenerator:
 - name: nginx

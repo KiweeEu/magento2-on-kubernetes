@@ -8,7 +8,6 @@ bases:
   - ../bases/redis
 
 resources:
-  - hpa/magento-php.yaml
   - hpa/magento-web.yaml
 
 patchesStrategicMerge:
