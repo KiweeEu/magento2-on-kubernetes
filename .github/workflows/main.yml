@@ -1,0 +1,39 @@
+name: Test
+run-name: Test
+on: [push]
+jobs:
+  test:
+    strategy:
+      matrix:
+        k8s-version: [v1.21.10, v1.22.7, v1.23.5]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create k8s Kind Cluster
+        uses: helm/kind-action@v1.5.0
+        with:
+          node_image: kindest/node:${{ matrix.k8s-version }}
+      - uses: alexellis/setup-arkade@v2
+      - uses: alexellis/arkade-get@master
+        with:
+          kubectl: latest
+          kustomize: latest
+          helm: latest
+
+      - name: Deploy dependencies
+        run: |
+          helm install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx
+          helm install eck-operator eck-operator --version '1.9.1' --repo https://helm.elastic.co
+          kubectl wait --timeout=120s --for=condition=available --all deployments || kubectl get pods --all-namespaces
+
+      - name: Test
+        run: |
+          kubectl apply -k overlays/test
+          kubectl wait --timeout=600s --for=condition=Ready pod --selector=job-name=magento-install || kubectl get pods --all-namespaces
+          kubectl logs -f job/magento-install
+          kubectl wait --timeout=600s --for=condition=available --all deployments || kubectl get pods --all-namespaces
+          kubectl get pods --all-namespaces
