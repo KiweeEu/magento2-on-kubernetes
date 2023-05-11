@@ -18,7 +18,7 @@ spec:
         args:
         - -kILSs
         - --fail
-        - $(INGRESS_NGINX_CONTROLLER_SERVICE_HOST)
+        - $(INGRESS_NGINX_NGINX_INGRESS_CONTROLLER_SERVICE_HOST)
         envFrom:
         - configMapRef:
             name: config

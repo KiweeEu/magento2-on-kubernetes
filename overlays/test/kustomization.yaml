@@ -6,12 +6,18 @@ patchesStrategicMerge:
   - patches/magento-web.yaml
 
 patchesJson6902:
-- target:
+- path: patches/elasticsearch.yaml
+  target:
     group: elasticsearch.k8s.elastic.co
     version: v1
     kind: Elasticsearch
     name: elasticsearch
-  path: patches/elasticsearch.yaml
+- path: patches/ingress.json
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: main
 
 configMapGenerator:
 - name: config
