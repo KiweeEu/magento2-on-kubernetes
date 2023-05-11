@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: magento-install
 spec:
-  ttlSecondsAfterFinished: 60
+  ttlSecondsAfterFinished: 600
   template:
     metadata:
       name: install
