@@ -17,7 +17,7 @@ spec:
         args:
           - -c
           - |
-            while ! { echo -e '*1\r\n$4\r\nPING\r\n'; sleep 1; } | nc $(REDIS_CACHE_HOST) $(REDIS_CACHE_PORT)
+            while ! { echo -e '*1\r\n$4\r\nPING\r\n'; sleep 1; } | nc -w1 $(REDIS_CACHE_HOST) $(REDIS_CACHE_PORT)
             do echo "waiting for $(REDIS_CACHE_HOST)"
             sleep 1
             done
@@ -46,7 +46,7 @@ spec:
         args:
           - -c
           - |
-            while ! { echo -e '*1\r\n$4\r\nPING\r\n'; sleep 1; } | nc $(REDIS_CACHE_HOST) $(REDIS_CACHE_PORT)
+            while ! { echo -e '*1\r\n$4\r\nPING\r\n'; sleep 1; } | nc -w1 $(REDIS_CACHE_HOST) $(REDIS_CACHE_PORT)
             do echo "waiting for $(REDIS_CACHE_HOST)"
             sleep 1
             done
