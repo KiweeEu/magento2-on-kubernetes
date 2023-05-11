@@ -21,8 +21,9 @@ spec:
           /bin/bash <<'EOF'
           bin/install.sh
           php bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/small.xml
-          magerun index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun index:set-mode schedule {}
-          magerun cache:flush
+          magerun --no-interaction index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun --no-interaction index:set-mode schedule {}
+          magerun --no-interaction index:reset
+          magerun --no-interaction cache:flush
           EOF
         envFrom:
         - configMapRef:
