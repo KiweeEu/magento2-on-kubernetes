@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/rules/0/host",
+    "value": "ingress-nginx-nginx-ingress-controller.default.svc.cluster.local"
+  }
+]
