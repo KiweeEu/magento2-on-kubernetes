@@ -1,7 +1,7 @@
-apiVersion: skaffold/v2beta22
+apiVersion: skaffold/v2beta26
 kind: Config
 metadata:
-  name: magento--kubernetes
+  name: magento-on-kubernetes
 build:
   tagPolicy:
     gitCommit: {}
@@ -22,6 +22,19 @@ deploy:
   kustomize:
     paths:
       - overlays/kind
+  helm:
+    releases:
+      - name: ingress-nginx
+        remoteChart: nginx-ingress
+        repo: https://helm.nginx.com/stable
+        setValues:
+          controller:
+            service:
+              type: ClusterIP
+      - name: eck-operator
+        remoteChart: eck-operator
+        repo: https://helm.elastic.co
+        version: 1.9.1
 portForward:
   - resourceType: Service
     resourceName: ingress-nginx-controller
