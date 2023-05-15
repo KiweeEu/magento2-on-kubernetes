@@ -8,8 +8,6 @@ do
 done;
 echo "Database found";
 
-rm app/etc/env.php
-
 php bin/magento setup:config:set \
     --no-interaction \
     --skip-db-validation \
@@ -26,5 +24,3 @@ yes | php bin/magento setup:install \
     --admin-firstname=$ADMIN_FIRSTNAME \
     --admin-lastname=$ADMIN_LASTNAME \
     --admin-email=$ADMIN_EMAIL
-
-php bin/magento cache:flush

@@ -8,7 +8,7 @@ bases:
   - ../bases/varnish
 
 patchesJson6902:
-- path: patch/ingress.json
+- path: patches/ingress.json
   target:
     group: networking.k8s.io
     version: v1

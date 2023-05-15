@@ -102,12 +102,12 @@ sub vcl_recv {
     # Static files caching
     if (req.url ~ "^/(pub/)?(media|static)/") {
         # Static files should not be cached by default
-        return (pass);
+        # return (pass);
 
         # But if you use a few locales and don't use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
-        #unset req.http.Https;
-        #unset req.http.X-Forwarded-Proto;
-        #unset req.http.Cookie;
+        unset req.http.Https;
+        unset req.http.X-Forwarded-Proto;
+        unset req.http.Cookie;
     }
 
     return (hash);

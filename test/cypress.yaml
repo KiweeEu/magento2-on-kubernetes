@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: cypress
 spec:
-  ttlSecondsAfterFinished: 60
+  ttlSecondsAfterFinished: 600
   template:
     metadata:
       name: cypress
@@ -19,9 +19,8 @@ spec:
         - -c
         - |
           while ! curl -kILSs --fail -XGET \
-            -H "Host: $(CONFIG__DEFAULT__WEB__COOKIE__COOKIE_DOMAIN)" \
-            $(INGRESS_NGINX_CONTROLLER_SERVICE_HOST)
-          do echo "waiting for $(CONFIG__DEFAULT__WEB__COOKIE__COOKIE_DOMAIN)"
+            $(BASE_URL_SECURE)
+          do echo "waiting for $(BASE_URL_SECURE)"
           sleep 1
           done
         envFrom:
