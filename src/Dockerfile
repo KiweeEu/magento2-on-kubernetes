@@ -68,12 +68,18 @@ WORKDIR /var/www/html
 
 ARG COMPOSER_AUTH
 
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.2.21 /usr/bin/composer /usr/bin/composer
 
 COPY --chown=www-data composer.json composer.json
 COPY --chown=www-data composer.lock composer.lock
 
-RUN php -d memory_limit=2G $(which composer) install --no-progress --no-dev
+RUN composer check-platform-reqs --lock && \
+    composer validate && \
+    composer install \
+        --no-interaction \
+        --no-progress \
+        --no-autoloader  \
+        --no-dev
 
 COPY --chown=www-data app/etc/config.php app/etc/config.php
 
@@ -84,13 +90,21 @@ EXPOSE 8080
 
 FROM build as dev
 
+RUN composer install \
+    --no-interaction \
+    --no-progress
+
 COPY --chown=www-data app/etc/env.docker.php app/etc/env.php
 
 FROM build as app
 
 ENV MAGE_MODE=production
+
+RUN composer dump-autoload \
+        --optimize \
+        --apcu
+
 RUN php -d memory_limit=2G bin/magento setup:di:compile
-RUN composer dump-autoload --optimize --apcu
 RUN php -d memory_limit=2G bin/magento setup:static-content:deploy -f
 RUN rm -rf /var/www/html/var/cache
 RUN rm -rf /var/www/html/var/page_cache
