@@ -7,13 +7,19 @@
         "AFL-3.0"
     ],
     "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "laminas/laminas-dependency-plugin": true,
+            "magento/*": true
+        },
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "version": "2.3.7-p3",
+    "version": "2.4.4-p3",
     "require": {
-        "magento/composer-root-update-plugin": "~1.1",
-        "magento/product-community-edition": "2.3.7-p3"
+        "magento/product-community-edition": "2.4.4-p3",
+        "magento/composer-root-update-plugin": "~2.0",
+        "magento/composer-dependency-version-audit-plugin": "~0.1"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -33,24 +39,23 @@
         "psr-4": {
             "Magento\\": "app/code/Magento/",
             "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-            "Magento\\Setup\\": "setup/src/Magento/Setup/",
-            "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+            "Magento\\Setup\\": "setup/src/Magento/Setup/"
         }
     },
     "require-dev": {
-        "allure-framework/allure-phpunit": "~1.2.0",
+        "allure-framework/allure-phpunit": "~1.5.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-        "friendsofphp/php-cs-fixer": "~2.16.0",
+        "friendsofphp/php-cs-fixer": "~3.3.0",
         "lusitanian/oauth": "~0.8.10",
         "magento/magento-coding-standard": "*",
-        "magento/magento2-functional-testing-framework": "^2.7",
-        "pdepend/pdepend": "~2.7.1",
-        "phpcompatibility/php-compatibility": "^9.3",
-        "phpmd/phpmd": "^2.8.0",
-        "phpstan/phpstan": ">=0.12.3 <=0.12.23",
-        "phpunit/phpunit": "^9",
-        "sebastian/phpcpd": "~5.0.0",
-        "squizlabs/php_codesniffer": "~3.5.4"
+        "magento/magento2-functional-testing-framework": "^3.7",
+        "pdepend/pdepend": "~2.10.0",
+        "phpmd/phpmd": "^2.9.1",
+        "phpstan/phpstan": "~1.2.0",
+        "phpunit/phpunit": "~9.5.0",
+        "sebastian/phpcpd": "^6.0.3",
+        "squizlabs/php_codesniffer": "~3.6.0",
+        "symfony/finder": "^5.2"
     },
     "conflict": {
         "gene/bluefoot": "*"
@@ -70,11 +75,11 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://repo-magento-mirror.fooman.co.nz/",
-            "canonical": false
+            "url": "https://repo-magento-mirror.fooman.co.nz/"
         }
     ],
     "extra": {
         "magento-force": "override"
     }
 }
+

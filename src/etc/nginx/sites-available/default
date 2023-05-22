@@ -27,8 +27,8 @@ server {
 
             fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
             fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=600";
-            fastcgi_read_timeout 60s;
-            fastcgi_connect_timeout 60s;
+            fastcgi_read_timeout 30s;
+            fastcgi_connect_timeout 30s;
 
             fastcgi_index  index.php;
             fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
@@ -68,11 +68,11 @@ server {
     }
 
     location / {
-        try_files $uri /index.php$is_args$args;
+        try_files $uri $uri/ /index.php$is_args$args;
     }
 
     location /pub/ {
-        location ~ ^/pub/media/(downloadable|customer|import|theme_customization/.*\.xml) {
+        location ~ ^/pub/media/(downloadable|customer|import|custom_options|theme_customization/.*\.xml) {
             deny all;
         }
         alias $MAGE_ROOT/pub/;
@@ -84,11 +84,11 @@ server {
         # expires max;
 
         # Remove signature of the static files that is used to overcome the browser cache
-        location ~ ^/static/version {
-            rewrite ^/static/(version\d*/)?(.*)$ /static/$2 last;
+        location ~ ^/static/version\d*/ {
+            rewrite ^/static/version\d*/(.*)$ /static/$1 last;
         }
 
-        location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2|json)$ {
+        location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|eot|ttf|otf|woff|woff2|html|json|webmanifest)$ {
             add_header Cache-Control "public";
             add_header X-Frame-Options "SAMEORIGIN";
             expires +1y;
@@ -119,7 +119,7 @@ server {
             deny all;
         }
 
-        location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|eot|ttf|otf|woff|woff2)$ {
             add_header Cache-Control "public";
             add_header X-Frame-Options "SAMEORIGIN";
             expires +1y;
@@ -145,6 +145,11 @@ server {
     location /media/import/ {
         deny all;
     }
+
+    location /media/custom_options/ {
+        deny all;
+    }
+
     location /errors/ {
         location ~* \.xml$ {
             deny all;
@@ -153,8 +158,10 @@ server {
 
     # PHP entry point for main application
     location ~ ^/(index|get|static|errors/report|errors/404|errors/503|health_check)\.php$ {
+        try_files $uri =404;
         fastcgi_pass   fastcgi_backend;
-        fastcgi_buffers 1024 4k;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
 
         fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
         fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
