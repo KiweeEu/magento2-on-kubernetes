@@ -33,7 +33,7 @@ jobs:
         with:
           path: ~/.skaffold/
           key: fixed-${{ github.sha }}
-      - name: Deploy Magneto
+      - name: Deploy Magento
         run: |
           skaffold run --profile="ci"
           kubectl wait --timeout=0 --for=condition=complete job/magento-install || \
