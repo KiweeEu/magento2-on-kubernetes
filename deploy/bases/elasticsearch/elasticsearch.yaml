@@ -43,6 +43,9 @@ spec:
           value: elasticsearch-0.elasticsearch
         - name: cluster.initial_master_nodes
           value: elasticsearch-0
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
         resources:
           requests:
             memory: 512Mi
@@ -50,3 +53,12 @@ spec:
           limits:
             memory: 512Mi
             cpu: 500m
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
