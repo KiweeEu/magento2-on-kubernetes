@@ -1,7 +1,6 @@
-FROM php:7.4-fpm as base
+FROM php:8.1.19-fpm as base
 
 ENV COMPOSER_HOME=/tmp/composer
-ENV APCU_VERSION=5.1.18
 
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
     nginx \
@@ -19,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
     unzip \
     ;
 
-RUN pecl install apcu-${APCU_VERSION}
+RUN pecl install apcu-5.1.22
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 RUN docker-php-ext-install -j "$(nproc)" \
