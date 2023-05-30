@@ -1,37 +1,64 @@
-apiVersion: elasticsearch.k8s.elastic.co/v1
-kind: Elasticsearch
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch
+  labels:
+    app: elasticsearch
+    k8s-app: magento
+spec:
+  selector:
+    app: elasticsearch
+  ports:
+  - name: elasticsearch
+    port: 9200
+    protocol: TCP
+    targetPort: 9200
+
+---
+
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
   name: elasticsearch
 spec:
-  version: 7.16.3
-  nodeSets:
-  - name: elasticsearch
-    count: 1
-    config:
-      node.master: true
-      node.data: true
-      node.ingest: true
-      node.store.allow_mmap: false
-      xpack.security.authc:
-        anonymous:
-          username: anonymous
-          roles: superuser
-          authz_exception: false
-    podTemplate:
-      spec:
-        containers:
-        - name: elasticsearch
-          env:
-          - name: ES_JAVA_OPTS
-            value: -Xms512m -Xmx512m
-          resources:
-            requests:
-              memory: 1Gi
-              cpu: 0.5
-            limits:
-              memory: 1Gi
-              cpu: 1
-  http:
-    tls:
-      selfSignedCertificate:
-        disabled: true
+  selector:
+    matchLabels:
+      app: elasticsearch
+  serviceName: elasticsearch
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+        k8s-app: magento
+    spec:
+      containers:
+      - name: elasticsearch
+        image: elasticsearch:7.16.3
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: ES_JAVA_OPTS
+          value: -Xms256m -Xmx256m
+        - name: discovery.seed_hosts
+          value: elasticsearch-0.elasticsearch
+        - name: cluster.initial_master_nodes
+          value: elasticsearch-0
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+        resources:
+          requests:
+            memory: 512Mi
+            cpu: 250m
+          limits:
+            memory: 512Mi
+            cpu: 500m
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi

@@ -31,17 +31,13 @@ deploy:
           controller:
             service:
               type: ClusterIP
-      - name: eck-operator
-        remoteChart: eck-operator
-        repo: https://helm.elastic.co
-        version: 1.9.1
 portForward:
   - resourceType: Service
-    resourceName: ingress-nginx-controller
+    resourceName: ingress-nginx-nginx-ingress-controller
     port: 443
     localPort: 8443
   - resourceType: Service
-    resourceName: ingress-nginx-controller
+    resourceName: ingress-nginx-nginx-ingress-controller
     port: 80
     localPort: 8080
 profiles:
