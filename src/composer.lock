@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d14c0c83aa4b0ecaab9b6c1ac69be76",
+    "content-hash": "925d14e49293ccea8704dfce4f5d7de4",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -1779,6 +1779,62 @@
                 "source": "https://github.com/google/recaptcha"
             },
             "time": "2023-02-18T17:41:46+00:00"
+        },
+        {
+            "name": "graycore/magento2-stdlogging",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/graycoreio/magento2-stdlogging.git",
+                "reference": "65c44eff83b12f96c0510326f303511df1b850d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/graycoreio/magento2-stdlogging/zipball/65c44eff83b12f96c0510326f303511df1b850d4",
+                "reference": "65c44eff83b12f96c0510326f303511df1b850d4",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "^102.0 || ^103.0",
+                "magento/module-developer": "^100.3.3",
+                "monolog/monolog": "^1 || ^2"
+            },
+            "require-dev": {
+                "magento/magento-coding-standard": ">=6",
+                "phpunit/phpunit": "^8 || ^9",
+                "squizlabs/php_codesniffer": "^3.0.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Graycore\\StdLogging\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Damien Retzinger",
+                    "email": "damienwebdev@gmail.com"
+                }
+            ],
+            "description": "A Magento 2 module that changes all logging handlers to stdout",
+            "support": {
+                "issues": "https://github.com/graycoreio/magento2-stdlogging/issues",
+                "source": "https://github.com/graycoreio/magento2-stdlogging/tree/v2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/graycoreio",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-06-26T18:49:04+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
