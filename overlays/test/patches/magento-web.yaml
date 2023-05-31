@@ -4,3 +4,23 @@ metadata:
   name: magento-web
 spec:
   minReplicas: 1
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magento-web
+spec:
+  template:
+    spec:
+      initContainers:
+      - name: setup
+        image: kiweeteam/magento2:2.3.7-p2-1
+        command:
+        - /bin/bash
+        args:
+        - -c
+        - |
+          php bin/magento setup:db:status
+          php bin/magento app:config:status

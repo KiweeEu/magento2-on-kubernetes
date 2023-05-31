@@ -43,6 +43,39 @@ spec:
         app: magento-web
         k8s-app: magento
     spec:
+      initContainers:
+      - name: wait-for-db
+        image: kiweeteam/magento2:2.3.7-p2-1
+        command:
+          - /bin/bash
+        args:
+        - -c
+        - |
+          while ! nc -z $DB_HOST 3306;
+          do
+            echo "Waiting for database...";
+            sleep 1;
+          done;
+          echo "Database found";
+        envFrom:
+        - configMapRef:
+            name: config
+        - configMapRef:
+            name: additional
+      - name: setup
+        image: kiweeteam/magento2:2.3.7-p2-1
+        command:
+        - /bin/bash
+        args:
+        - -c
+        - |
+          php bin/magento setup:db:status || php bin/magento setup:upgrade --keep-generated
+          php bin/magento app:config:status || php bin/magento app:config:import
+        envFrom:
+        - configMapRef:
+            name: config
+        - configMapRef:
+            name: additional
       containers:
       - image: kiweeteam/magento2:2.3.7-p3-2
         imagePullPolicy: IfNotPresent
