@@ -1,8 +1,5 @@
 <?php
 $env = [
-    'install' => [
-        'date' => 'Wed, 10 Oct 2018 09:52:12 +0000'
-    ],
     'backend' => [
         'frontName' => getenv('ADMIN_URI')
     ],
@@ -51,6 +48,12 @@ $env = [
         'document_root_is_pub' => true
     ]
 ];
+
+if (!getenv('INSTALL_MAGENTO')) {
+    $env['install'] = [
+        'date' => 'Wed, 10 Oct 2018 09:52:12 +0000'
+    ];
+}
 
 if (getenv('REDIS_SESSION_HOST')) {
     $env['session'] = [
