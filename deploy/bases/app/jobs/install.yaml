@@ -11,23 +11,43 @@ spec:
         app: magento-install
         k8s-app: magento
     spec:
-      containers:
-      - name: magento-setup
+      initContainers:
+      - name: wait-for-db
         image: kiweeteam/magento2:2.3.7-p3-2
-        command: ["/bin/sh"]
+        command:
+          - /bin/bash
         args:
         - -c
         - |
-          /bin/bash <<'EOF'
-          bin/install.sh
+          while ! nc -z $DB_HOST 3306;
+          do
+            echo "Waiting for database...";
+            sleep 1;
+          done;
+          echo "Database found";
+        envFrom:
+        - configMapRef:
+            name: config
+        - configMapRef:
+            name: additional
+      containers:
+      - name: magento-setup
+        image: kiweeteam/magento2:2.3.7-p3-2
+        command:
+          - /bin/bash
+        args:
+        - -c
+        - |
+          ./bin/install.sh
           php bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/small.xml
           magerun --no-interaction index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun --no-interaction index:set-mode schedule {}
           magerun --no-interaction index:reset
           magerun --no-interaction cache:flush
-          EOF
         envFrom:
         - configMapRef:
             name: config
+        - configMapRef:
+            name: additional
         volumeMounts:
         - mountPath: /var/www/html/pub/media
           name: media
