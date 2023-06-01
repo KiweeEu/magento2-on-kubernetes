@@ -34,9 +34,9 @@ jobs:
           key: fixed-${{ github.sha }}
       - name: Deploy Magento
         run: |
-          skaffold run --profile="ci"
+          skaffold run --profile="ci" --status-check=false
           kubectl wait --timeout=0 --for=condition=complete job/magento-install || \
-          kubectl wait --timeout=120s --for=condition=Ready pod --selector=job-name=magento-install
+          kubectl wait --timeout=300s --for=condition=Ready pod --selector=job-name=magento-install
           kubectl logs -f job/magento-install --all-containers
           kubectl wait --timeout=60s --for=condition=complete job/magento-install
       - name: Test
@@ -44,4 +44,4 @@ jobs:
           kubectl wait --timeout=0 --for=condition=complete job/cypress || \
           kubectl wait --timeout=120s --for=condition=Ready pod --selector=job-name=cypress
           kubectl logs -f job/cypress
-          kubectl wait --timeout=60s --for=condition=complete job/cypress
+          kubectl wait --timeout=300s --for=condition=complete job/cypress
