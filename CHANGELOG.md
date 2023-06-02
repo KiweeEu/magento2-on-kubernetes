@@ -7,6 +7,17 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## [2.3.7-p3-2] - 2023-06-02
+### Added
+- skaffold.yaml
+- Simple E2E test
+
+### Changed
+- Updated supported K8s versions (v1.22.17, v1.23.17, v1.24.12)
+- Replaced ECK with a StatefulSet for Elasticsearch
+- Locked Composer version at v2.2
+- Merged PHP and Nginx containers
+
 ## [2.3.7-p3-1] - 2022-05-12
 ### Changed
 - Update ECK Operator to 1.9.1
