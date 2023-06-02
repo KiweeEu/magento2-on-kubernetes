@@ -7,6 +7,11 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## [2.4.4-p3-1] - 2023-06-02
+### Changed
+- Updated Magento to 2.4.4-p3
+- Updated Magento initialization
+
 ## [2.3.7-p3-2] - 2023-06-02
 ### Added
 - skaffold.yaml
