@@ -28,7 +28,7 @@ jobs:
           sudo install skaffold /usr/local/bin/
           skaffold version
       - name: Cache skaffold image builds & config
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.skaffold/
           key: fixed-${{ github.sha }}
