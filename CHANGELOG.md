@@ -7,6 +7,11 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## [2.4.5-p3-1] - 2023-06-28
+### Changed
+- Updated Magento 2.4.5-p3
+- Updated supported K8s versions (v1.25, v1.26, v1.27)
+
 ## [2.4.4-p3-2] - 2023-06-07
 ### Changed
 - Updated PHP to 8.1.19

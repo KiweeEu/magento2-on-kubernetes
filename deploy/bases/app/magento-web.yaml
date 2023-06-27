@@ -45,7 +45,7 @@ spec:
     spec:
       initContainers:
       - name: wait-for-db
-        image: kiweeteam/magento2:2.4.4-p3-1
+        image: kiweeteam/magento2:2.4.5-p3-1
         command:
           - /bin/bash
         args:
@@ -63,7 +63,7 @@ spec:
         - configMapRef:
             name: additional
       - name: setup
-        image: kiweeteam/magento2:2.4.4-p3-1
+        image: kiweeteam/magento2:2.4.5-p3-1
         command:
         - /bin/bash
         args:
@@ -77,7 +77,7 @@ spec:
         - configMapRef:
             name: additional
       containers:
-      - image: kiweeteam/magento2:2.4.4-p3-1
+      - image: kiweeteam/magento2:2.4.5-p3-1
         imagePullPolicy: IfNotPresent
         name: magento-web
         ports:
