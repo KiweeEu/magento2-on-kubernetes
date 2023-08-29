@@ -56,7 +56,7 @@
         "pdepend/pdepend": "~2.10.0",
         "phpmd/phpmd": "^2.12.0",
         "phpstan/phpstan": "^1.6.8",
-        "phpunit/phpunit": "~9.5.20",
+        "phpunit/phpunit": "~9.6.0",
         "sebastian/phpcpd": "^6.0.3",
         "squizlabs/php_codesniffer": "~3.6.0",
         "symfony/finder": "^5.2"
