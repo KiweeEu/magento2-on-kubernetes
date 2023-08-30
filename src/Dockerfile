@@ -4,7 +4,7 @@ ENV COMPOSER_HOME=/tmp/composer
 
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
     nginx \
-    netcat \
+    netcat-openbsd \
     libicu-dev \
     libfreetype6-dev \
     libjpeg-dev \
