@@ -1,4 +1,4 @@
-FROM php:8.1.19-fpm as base
+FROM php:8.2.9-fpm as base
 
 ENV COMPOSER_HOME=/tmp/composer
 
