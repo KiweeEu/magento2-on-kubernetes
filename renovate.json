@@ -7,5 +7,8 @@
     "**/node_modules/**",
     "**/bower_components/**",
     "**/vendor/**"
-  ]
+  ],
+  "kubernetes": {
+      "fileMatch": ["deploy/.+\\.yaml$"]
+  }
 }
