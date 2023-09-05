@@ -36,7 +36,7 @@ spec:
         k8s-app: magento
     spec:
       containers:
-      - image: varnish:6.2
+      - image: varnish:6.6@sha256:53d615e2a6db98b9bf3c9303e5c29fc13786c7effda31f0dfc428c69f5241ab2
         name: varnish
         command: ["/bin/sh"]
         args:
