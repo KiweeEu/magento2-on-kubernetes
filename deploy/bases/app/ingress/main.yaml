@@ -16,7 +16,7 @@ spec:
       port:
         name: http
   rules:
-    - host: mok.localhost
+    - host: magento2.local
       http:
         paths:
           - path: /
