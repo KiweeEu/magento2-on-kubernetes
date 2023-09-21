@@ -2,21 +2,6 @@ MINIKUBE = /usr/bin/env minikube
 KUSTOMIZE = /usr/bin/env kustomize
 KUBECTL = /usr/bin/env kubectl
 
-ELASTIC-CRDS-URL := https://download.elastic.co/downloads/eck/1.9.1/crds.yaml
-ELASTIC-CRDS-FILE := crds.yaml
-ELASTIC-CRDS-PATH := ./es-crds
-
-
-$(ELASTIC-CRDS-PATH):
-	mkdir -p $(ELASTIC-CRDS-PATH)
-
-$(ELASTIC-CRDS-PATH)/$(ELASTIC-CRDS-FILE): $(ELASTIC-CRDS-PATH)
-	curl -o $(ELASTIC-CRDS-PATH)/$(ELASTIC-CRDS-FILE) $(ELASTIC-CRDS-URL)
-
-elastic-crds: $(ELASTIC-CRDS-PATH)/$(ELASTIC-CRDS-FILE)
-	$(KUBECTL) create -f $(ELASTIC-CRDS-PATH)/$(ELASTIC-CRDS-FILE)
-
-
 minikube:
 	$(MINIKUBE) start \
 	--kubernetes-version=v1.24.0 \
@@ -36,13 +21,13 @@ minikube:
 step-1:
 	$(KUSTOMIZE) build deploy/step-1 | $(KUBECTL) apply -f -
 
-step-2: elastic-crds
+step-2:
 	$(KUSTOMIZE) build deploy/step-2 | $(KUBECTL) apply -f -
 
-step-3: elastic-crds
+step-3:
 	$(KUSTOMIZE) build deploy/step-3 | $(KUBECTL) apply -f -
 
-step-4: elastic-crds
+step-4:
 	$(KUSTOMIZE) build deploy/step-4 | $(KUBECTL) apply -f -
 
 .PHONY: minikube step-1 step-2 step-3 step-4
