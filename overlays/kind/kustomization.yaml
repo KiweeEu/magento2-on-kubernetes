@@ -9,3 +9,11 @@ configMapGenerator:
   behavior: merge
   envs:
   - patches/common.env
+
+patchesJson6902:
+- path: patches/ingress.json
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: main
