@@ -38,8 +38,9 @@ spec:
         args:
         - -c
         - |
+          set -o errexit
           ./bin/install.sh
-          php bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/small.xml
+          php bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/small.xml || echo "Failed generating some data."
           magerun --no-interaction index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun --no-interaction index:set-mode schedule {}
           magerun --no-interaction index:reset
           magerun --no-interaction cache:flush

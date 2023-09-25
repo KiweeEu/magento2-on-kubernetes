@@ -69,8 +69,15 @@ spec:
         args:
         - -c
         - |
+          set -o errexit
+          # Update database schema if needed
           php bin/magento setup:db:status || php bin/magento setup:upgrade --keep-generated
+          # Fail if database schema is not up-to-date after setup:upgrade
+          php bin/magento setup:db:status
+          # Import config if needed
           php bin/magento app:config:status || php bin/magento app:config:import
+          # Fail if config is not up-to-date after app:config:import
+          php bin/magento app:config:status
         envFrom:
         - configMapRef:
             name: config
