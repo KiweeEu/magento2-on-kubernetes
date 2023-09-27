@@ -38,6 +38,7 @@ spec:
         args:
         - -c
         - |
+          set -o errexit
           ./bin/install.sh
           php bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/small.xml
           magerun --no-interaction index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun --no-interaction index:set-mode schedule {}
