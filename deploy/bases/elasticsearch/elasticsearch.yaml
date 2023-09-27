@@ -45,6 +45,8 @@ spec:
           value: elasticsearch-0
         - name: xpack.security.enabled
           value: "false"
+        - name: ingest.geoip.downloader.enabled
+          value: "false"
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: data
