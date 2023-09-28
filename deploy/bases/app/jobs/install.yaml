@@ -13,7 +13,7 @@ spec:
     spec:
       initContainers:
       - name: wait-for-db
-        image: kiweeteam/magento2:2.4.5-p3-1
+        image: kiweeteam/magento2:2.4.5-p3-1@sha256:1f7252b5dc036a7c94f9b4d33bc1c0e18e5380f84919cd17e2c1a5f1084f9bb8
         command:
           - /bin/bash
         args:
@@ -32,7 +32,7 @@ spec:
             name: additional
       containers:
       - name: magento-setup
-        image: kiweeteam/magento2:2.4.5-p3-1
+        image: kiweeteam/magento2:2.4.5-p3-1@sha256:1f7252b5dc036a7c94f9b4d33bc1c0e18e5380f84919cd17e2c1a5f1084f9bb8
         command:
           - /bin/bash
         args:

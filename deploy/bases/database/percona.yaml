@@ -60,7 +60,7 @@ spec:
             configMapKeyRef:
               name: config
               key: DB_ROOT_PASS
-        image: percona:5.7
+        image: percona:5.7@sha256:0f19995a44c099c14a1f11cbed69b3b28711259b45af9b5c117db4d217af2453
         name: db
         resources:
           requests:

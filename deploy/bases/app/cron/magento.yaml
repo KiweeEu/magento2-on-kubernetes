@@ -16,7 +16,7 @@ spec:
         spec:
           initContainers:
           - name: wait-for-web
-            image: curlimages/curl
+            image: curlimages/curl@sha256:961cf9e2a1939ea380b3f16e313a581b5d4681dd9dc4b1ace060eb396a71df0d
             command: ["/bin/sh"]
             args:
             - -c
@@ -32,7 +32,7 @@ spec:
                 name: config
           containers:
           - name: magento-cron
-            image: kiweeteam/magento2:2.4.5-p3-1
+            image: kiweeteam/magento2:2.4.5-p3-1@sha256:1f7252b5dc036a7c94f9b4d33bc1c0e18e5380f84919cd17e2c1a5f1084f9bb8
             command: ["/bin/sh"]
             args:
             - -c

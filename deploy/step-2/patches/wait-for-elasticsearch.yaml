@@ -12,7 +12,7 @@ spec:
       - name: magento-web
       initContainers:
       - name: wait-for-elasticsearch
-        image: curlimages/curl
+        image: curlimages/curl@sha256:961cf9e2a1939ea380b3f16e313a581b5d4681dd9dc4b1ace060eb396a71df0d
         command: ["/bin/sh"]
         args:
         - -c
@@ -41,7 +41,7 @@ spec:
       - name: magento-setup
       initContainers:
       - name: wait-for-elasticsearch
-        image: curlimages/curl
+        image: curlimages/curl@sha256:961cf9e2a1939ea380b3f16e313a581b5d4681dd9dc4b1ace060eb396a71df0d
         command: ["/bin/sh"]
         args:
         - -c
