@@ -85,6 +85,8 @@ COPY --chown=www-data app/etc/config.php app/etc/config.php
 COPY --chown=www-data bin bin
 COPY bin/entrypoint.sh /usr/local/bin/docker-php-entrypoint
 
+COPY setup/performance-toolkit/profiles/ce/mok.xml setup/performance-toolkit/profiles/ce/mok.xml
+
 EXPOSE 8080
 
 FROM build as dev
