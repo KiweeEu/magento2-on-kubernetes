@@ -3,20 +3,20 @@ kind: Kustomization
 metadata:
   name: step-4
 
-bases:
-  - ../step-3
-  - ../bases/varnish
 
-patchesJson6902:
+
+configMapGenerator:
+- behavior: merge
+  envs:
+  - config/additional.env
+  name: additional
+resources:
+- ../step-3
+- ../bases/varnish
+patches:
 - path: patches/ingress.json
   target:
     group: networking.k8s.io
-    version: v1
     kind: Ingress
     name: main
-
-configMapGenerator:
-- name: additional
-  behavior: merge
-  envs:
-  - config/additional.env
+    version: v1

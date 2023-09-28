@@ -3,15 +3,16 @@ kind: Kustomization
 metadata:
   name: step-2
 
-bases:
-  - ../step-1
-  - ../bases/elasticsearch
 
-patchesStrategicMerge:
-  - patches/wait-for-elasticsearch.yaml
 
 configMapGenerator:
-- name: additional
-  behavior: merge
+- behavior: merge
   envs:
   - config/additional.env
+  name: additional
+resources:
+- ../step-1
+- ../bases/elasticsearch
+patches:
+- path: patches/wait-for-elasticsearch-magento-web.yaml
+- path: patches/wait-for-elasticsearch-magento-install.yaml
