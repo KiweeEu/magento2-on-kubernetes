@@ -27,7 +27,4 @@ step-2:
 step-3:
 	$(KUSTOMIZE) build deploy/step-3 | $(KUBECTL) apply -f -
 
-step-4:
-	$(KUSTOMIZE) build deploy/step-4 | $(KUBECTL) apply -f -
-
 .PHONY: minikube step-1 step-2 step-3 step-4

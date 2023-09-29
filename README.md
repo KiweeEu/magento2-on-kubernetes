@@ -34,13 +34,10 @@ make minikube
 # Deploy a minimal Magento 2 configuration
 make step-1
 
-# Deploy step-1 with Elasticsearch (using Elastic Cloud on Kubernetes)
+# Deploy step-1 with Redis for cache and session storage and
+# HorizontalPodAutoscalers controlling NGINX and PHP-FPM deployments
 make step-2
 
-# Deploy step-2 with Redis for cache and session storage and
-# HorizontalPodAutoscalers controlling NGINX and PHP-FPM deployments
+# Deploy step-2 with Varnish
 make step-3
-
-# Deploy step-3 with Varnish
-make step-4
 ```

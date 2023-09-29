@@ -5,3 +5,16 @@ metadata:
 
 bases:
   - ../step-1
+  - ../bases/redis
+
+resources:
+  - hpa/magento-web.yaml
+
+patchesStrategicMerge:
+  - patches/wait-for-redis.yaml
+
+configMapGenerator:
+- name: additional
+  behavior: merge
+  envs:
+  - config/additional.env
