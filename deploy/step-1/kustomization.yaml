@@ -6,3 +6,4 @@ metadata:
 bases:
 - ../bases/app
 - ../bases/database
+- ../bases/elasticsearch

@@ -5,13 +5,3 @@ metadata:
 
 bases:
   - ../step-1
-  - ../bases/elasticsearch
-
-patchesStrategicMerge:
-  - patches/wait-for-elasticsearch.yaml
-
-configMapGenerator:
-- name: additional
-  behavior: merge
-  envs:
-  - config/additional.env
