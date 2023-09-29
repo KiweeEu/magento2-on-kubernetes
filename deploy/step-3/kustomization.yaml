@@ -3,15 +3,17 @@ kind: Kustomization
 metadata:
   name: step-3
 
-bases:
-  - ../step-2
-  - ../bases/redis
-
 resources:
-  - hpa/magento-web.yaml
+  - ../step-2
+  - ../bases/varnish
 
-patchesStrategicMerge:
-  - patches/wait-for-redis.yaml
+patchesJson6902:
+- path: patches/ingress.json
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: main
 
 configMapGenerator:
 - name: additional

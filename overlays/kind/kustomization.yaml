@@ -1,5 +1,5 @@
 bases:
-  - ../../deploy/step-4
+  - ../../deploy/step-3
 
 patchesStrategicMerge:
   - patches/pvc.yaml
