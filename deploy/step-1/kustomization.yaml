@@ -3,6 +3,6 @@ kind: Kustomization
 metadata:
   name: step-1
 
-bases:
+resources:
 - ../bases/app
 - ../bases/database
