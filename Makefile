@@ -18,6 +18,11 @@ minikube:
 	minikube addons enable storage-provisioner
 	minikube addons enable metrics-server
 
+purge:
+	$(KUBECTL) delete -k deploy/step-4
+	$(KUBECTL) delete pvc data-db-0
+	$(KUBECTL) delete pvc data-elasticsearch-0
+
 step-1:
 	$(KUSTOMIZE) build deploy/step-1 | $(KUBECTL) apply -f -
 
