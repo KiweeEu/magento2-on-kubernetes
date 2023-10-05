@@ -38,7 +38,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: ES_JAVA_OPTS
-          value: -Xms256m -Xmx256m
+          value: -Xms512m -Xmx512m
         - name: discovery.seed_hosts
           value: elasticsearch-0.elasticsearch
         - name: cluster.initial_master_nodes
@@ -52,10 +52,10 @@ spec:
           name: data
         resources:
           requests:
-            memory: 512Mi
+            memory: 1Gi
             cpu: 250m
           limits:
-            memory: 512Mi
+            memory: 1Gi
             cpu: 500m
   volumeClaimTemplates:
   - metadata:
