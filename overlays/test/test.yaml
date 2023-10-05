@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: magento-test
-        image: curlimages/curl
+        image: curlimages/curl:8.2.1
         command: ["curl"]
         args:
         - -kILSs
