@@ -12,7 +12,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: 80
+    targetPort: 8080
   - name: proxy
     port: 6091
     protocol: TCP
@@ -42,10 +42,10 @@ spec:
         args:
           - -c
           - |
-            varnishd -a :80 -a :6091 -f /etc/varnish/default.vcl -s default,512M;
+            varnishd -a :8080 -a :6091 -f /etc/varnish/default.vcl -s default,512M;
             varnishncsa -F '%h %l %u %t "%r" %s %b "%{Referer}i" "%{User-agent}i" %{Varnish:handling}x'
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         - containerPort: 6091
         resources:
           requests:
