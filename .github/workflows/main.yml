@@ -37,7 +37,6 @@ jobs:
           skaffold run --profile="ci" --status-check=false
           kubectl wait --timeout=0 --for=condition=complete job/magento-install || \
           kubectl wait --timeout=300s --for=condition=Ready pod --selector=job-name=magento-install
-          kubectl logs -f deployment/varnish --all-containers
           kubectl logs -f job/magento-install --all-containers
           kubectl wait --timeout=60s --for=condition=complete job/magento-install
       - name: Test
