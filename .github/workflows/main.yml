@@ -32,6 +32,12 @@ jobs:
         with:
           path: ~/.skaffold/
           key: fixed-${{ github.sha }}
+      # https://kind.sigs.k8s.io/docs/user/known-issues/#apparmor
+      - name: Disable AppArmor for MySQL
+        run: |
+          set -x
+          sudo apt-get install apparmor-profiles
+          sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: Deploy Magento
         run: |
           skaffold run --profile="ci" --status-check=false
