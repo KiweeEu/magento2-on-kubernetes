@@ -47,6 +47,8 @@ spec:
           value: "false"
         - name: ingest.geoip.downloader.enabled
           value: "false"
+        - name: cluster.routing.allocation.disk.threshold_enabled
+          value: "false"
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: data
