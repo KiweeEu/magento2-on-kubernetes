@@ -30,12 +30,15 @@ spec:
         k8s-app: magento
     spec:
       containers:
-      - args:
+      - name: db
+        image: percona:5.7
+        args:
         - --max_allowed_packet=134217728
         - --ignore-db-dir=lost+found
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: data
+          subPath: mysql
         - mountPath: /etc/my.cnf
           name: mycnf
           subPath: my.cnf
@@ -60,8 +63,6 @@ spec:
             configMapKeyRef:
               name: config
               key: DB_ROOT_PASS
-        image: percona:5.7
-        name: db
         resources:
           requests:
             cpu: 100m
