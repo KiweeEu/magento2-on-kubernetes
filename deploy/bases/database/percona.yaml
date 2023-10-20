@@ -36,7 +36,7 @@ spec:
         - mountPath: /var/lib/mysql
           name: data
           subPath: mysql
-        - mountPath: /etc/my.cnf
+        - mountPath: /etc/my.cnf.d/magento.cnf
           name: mycnf
           subPath: my.cnf
         env:
