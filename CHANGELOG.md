@@ -7,9 +7,26 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
-## Unreleased
+## [2.4.6-p2-1] - 2023-10-24
+### Added
+- `make destroy` command
+- Additional config and schema validation during Magento startup
+- Custom fixture for data generator
+
+
 ### Changed
 - Merged step-1 and step-2
+- Replaced ECK-deployed Elasticsearch with a simple Statefulset
+- Redirected Magento logs directly to `stdout`, without sidecar contianers
+- Updated PHP to v8.2
+- Updated Composer to v2.6
+- Updated Percona to v8.0
+- Updated Elasticsearch to v7.17
+- Updated Varnish to v7.4
+
+### Fixed
+- Inconsistencies in domain names
+
 
 ## [2.4.5-p3-1] - 2023-06-28
 ### Changed
