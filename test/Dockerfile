@@ -5,7 +5,7 @@ RUN apk add \
     docker-cli \
     ;
 
-COPY --from=alpine/helm:3.13.0@sha256:77e6beae38edcb7fff34452dfa9ad02ad263ff6748aa862e9c845a0c79adb2b7 /usr/bin/helm /usr/bin/helm
+COPY --from=alpine/helm:3.13.1@sha256:648baa92dc4b1cb41b2c298be87f4ac0c0d61d1ef9942d054ce0347698a1fa85 /usr/bin/helm /usr/bin/helm
 
 RUN curl -Lo ./kubectl https://dl.k8s.io/release/v1.21.10/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
