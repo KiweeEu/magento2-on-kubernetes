@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: elasticsearch
-        image: elasticsearch:7.17.13@sha256:7a32c0bd5399222dfe7bb85327b4c05226b46027288ea266193e2193ef076b14
+        image: elasticsearch:8.10.2@sha256:53efb4ba72e1c71c8223ee8d8de6537e8d992ad6cc8fcdf5dd944be93b6ab814
         imagePullPolicy: IfNotPresent
         env:
         - name: ES_JAVA_OPTS
