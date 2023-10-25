@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redis:7.0.14
+        image: redis:7.0.14@sha256:d634d2c07d1f70672aa2e8c2443643b23b5755ecfc068685b0dcf0b76a9db72b
         imagePullPolicy: IfNotPresent
         resources:
           limits:

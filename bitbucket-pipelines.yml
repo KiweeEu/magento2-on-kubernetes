@@ -3,6 +3,6 @@ pipelines:
     - parallel:
       - step:
           name: 'Run basic manifest validation'
-          image: 'garethr/kubeval:0.15.0'
+          image: 'garethr/kubeval:0.15.0@sha256:6962d8ecbb7839637667f66e6703e6ebaae0c29dfe93a31d9968fba4324c7b8d'
           script:
             - kubeval -d deploy -o tap --ignore-missing-schemas
