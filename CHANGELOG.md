@@ -7,6 +7,10 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## Unreleased
+### Changed
+- Pinned Redis image tag to 7.0.x
+
 ## [2.4.6-p2-1] - 2023-10-24
 ### Added
 - `make destroy` command

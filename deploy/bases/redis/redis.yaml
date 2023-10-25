@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redis
+        image: redis:7.0.14
         imagePullPolicy: IfNotPresent
         resources:
           limits:
