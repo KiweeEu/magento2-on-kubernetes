@@ -16,7 +16,7 @@ spec:
         spec:
           initContainers:
           - name: wait-for-web
-            image: curlimages/curl:8.3.0@sha256:961cf9e2a1939ea380b3f16e313a581b5d4681dd9dc4b1ace060eb396a71df0d
+            image: curlimages/curl:8.4.0@sha256:4a3396ae573c44932d06ba33f8696db4429c419da87cbdc82965ee96a37dd0af
             command: ["/bin/sh"]
             args:
             - -c
