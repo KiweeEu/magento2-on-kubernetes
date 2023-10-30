@@ -19,7 +19,7 @@ minikube:
 	minikube addons enable metrics-server
 
 destroy:
-	$(KUBECTL) delete -k deploy/step-4
+	$(KUBECTL) delete -k deploy/step-3
 	$(KUBECTL) delete pvc data-db-0
 	$(KUBECTL) delete pvc data-elasticsearch-0
 
@@ -32,4 +32,4 @@ step-2:
 step-3:
 	$(KUSTOMIZE) build deploy/step-3 | $(KUBECTL) apply -f -
 
-.PHONY: minikube step-1 step-2 step-3 step-4 destroy
+.PHONY: minikube step-1 step-2 step-3 destroy
