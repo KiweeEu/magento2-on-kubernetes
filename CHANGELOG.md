@@ -7,16 +7,22 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
-## Unreleased
+## [2.4.6-p3-1] - 2023-11-20
 ### Changed
-- Pinned Redis image tag to 7.0.x
+- Updated Magento to 2.4.6-p3
+- Updated PHP to 8.1.12
+- Updated Elasticsearch to 7.17.15
+- Updated Cypress to 13.5.1
+- Pinned dependencies
+
+### Removed
+- Removed unused Dockerfie
 
 ## [2.4.6-p2-1] - 2023-10-24
 ### Added
 - `make destroy` command
 - Additional config and schema validation during Magento startup
 - Custom fixture for data generator
-
 
 ### Changed
 - Merged step-1 and step-2
