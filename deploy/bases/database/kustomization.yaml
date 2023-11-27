@@ -5,6 +5,7 @@ metadata:
 
 resources:
 - percona.yaml
+- credentials.yaml
 
 configMapGenerator:
 - name: mycnf

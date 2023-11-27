@@ -38,6 +38,24 @@ spec:
             - -c
             - |
               php bin/magento cron:run
+            env:
+            - name: DB_HOST
+              value: db
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: MYSQL_DATABASE
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: MYSQL_USER
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: MYSQL_PASSWORD
             envFrom:
             - configMapRef:
                 name: config

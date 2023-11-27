@@ -5,6 +5,7 @@ metadata:
 
 resources:
 - magento-web.yaml
+- credentials.yaml
 - ingress/main.yaml
 - cron/magento.yaml
 - jobs/install.yaml

@@ -57,6 +57,9 @@ spec:
             sleep 1;
           done;
           echo "Database found";
+        env:
+        - name: DB_HOST
+          value: db
         envFrom:
         - configMapRef:
             name: config
@@ -94,6 +97,24 @@ spec:
           php bin/magento app:config:status || php bin/magento app:config:import
           # Fail if config is not up-to-date after app:config:import
           php bin/magento app:config:status
+        env:
+        - name: DB_HOST
+          value: db
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_DATABASE
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_PASSWORD
         envFrom:
         - configMapRef:
             name: config
@@ -133,11 +154,31 @@ spec:
           requests:
             cpu: 250m
             memory: 1Gi
+        env:
+        - name: DB_HOST
+          value: db
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_DATABASE
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_PASSWORD
         envFrom:
         - configMapRef:
             name: config
         - configMapRef:
             name: additional
+        - secretRef:
+            name: magento-admin
         volumeMounts:
         - name: media
           mountPath: /var/www/html/pub/media
