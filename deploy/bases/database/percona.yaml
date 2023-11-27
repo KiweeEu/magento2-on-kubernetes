@@ -40,26 +40,28 @@ spec:
           name: mycnf
           subPath: my.cnf
         env:
+        - name: DB_HOST
+          value: db
         - name: MYSQL_DATABASE
           valueFrom:
-            configMapKeyRef:
-              name: config
-              key: DB_NAME
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_DATABASE
         - name: MYSQL_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: config
-              key: DB_PASS
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_PASSWORD
         - name: MYSQL_USER
           valueFrom:
-            configMapKeyRef:
-              name: config
-              key: DB_USER
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_USER
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: config
-              key: DB_ROOT_PASS
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_ROOT_PASSWORD
         resources:
           requests:
             cpu: 100m

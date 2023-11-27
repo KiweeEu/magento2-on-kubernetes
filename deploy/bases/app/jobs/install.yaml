@@ -25,6 +25,9 @@ spec:
             sleep 1;
           done;
           echo "Database found";
+        env:
+        - name: DB_HOST
+          value: db
         envFrom:
         - configMapRef:
             name: config
@@ -60,11 +63,31 @@ spec:
           magerun --no-interaction index:list | awk '{print $2}' | tail -n+4 | xargs -I{} magerun --no-interaction index:set-mode schedule {}
           magerun --no-interaction index:reset
           magerun --no-interaction cache:flush
+        env:
+        - name: DB_HOST
+          value: db
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_DATABASE
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: MYSQL_PASSWORD
         envFrom:
         - configMapRef:
             name: config
         - configMapRef:
             name: additional
+        - secretRef:
+            name: magento-admin
         volumeMounts:
         - mountPath: /var/www/html/pub/media
           name: media

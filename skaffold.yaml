@@ -31,6 +31,9 @@ deploy:
           controller:
             service:
               type: ClusterIP
+      - name: secrets-generator
+        remoteChart: kubernetes-secret-generator
+        repo: https://helm.mittwald.de
 portForward:
   - resourceType: Service
     resourceName: ingress-nginx-nginx-ingress-controller

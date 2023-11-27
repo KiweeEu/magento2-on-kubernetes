@@ -8,6 +8,9 @@ suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
 ## Unreleased
+### Changed
+- Passwords (database, admin) are now randomly generated
+
 ### Fixed
 - Varnish returning incomplete response
 
