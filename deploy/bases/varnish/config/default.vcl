@@ -19,6 +19,10 @@ backend default {
 }
 
 sub vcl_recv {
+    if (req.restarts > 0) {
+        set req.hash_always_miss = true;
+    }
+
     if (req.method == "PURGE") {
         if (std.port(server.ip) == 6091) {
             return (synth(405, "Method not allowed"));
@@ -51,11 +55,6 @@ sub vcl_recv {
 
     # We only deal with GET and HEAD by default
     if (req.method != "GET" && req.method != "HEAD") {
-        return (pass);
-    }
-
-    # Bypass caching for WordPress
-    if (req.url ~ "^/wp/") {
         return (pass);
     }
 
