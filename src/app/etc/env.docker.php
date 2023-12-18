@@ -44,6 +44,12 @@ $env = [
         'translate' => 1,
         'compiled_config' => 1
     ],
+    'session' => [
+        'save' => 'db',
+        'gc_probability' => 1,
+        'gc_divisor' => 1000,
+        'gc_maxlifetime' => 1440
+    ],
     'directories' => [
         'document_root_is_pub' => true
     ]
@@ -55,6 +61,14 @@ if (!getenv('INSTALL_MAGENTO')) {
     ];
 }
 
+if (getenv('MEMCACHED_SESSION_HOST') && getenv('MEMCACHED_SESSION_PORT')) {
+    $env['session'] = [
+        'save' => 'memcached',
+        'save_path' => getenv('MEMCACHED_SESSION_HOST') . ":" . getenv('MEMCACHED_SESSION_PORT'),
+    ];
+}
+
+
 if (getenv('REDIS_SESSION_HOST')) {
     $env['session'] = [
         'save' => 'redis',
@@ -64,12 +78,13 @@ if (getenv('REDIS_SESSION_HOST')) {
             'max_concurrency' => '16',
         ]
     ];
-}
-if (getenv('REDIS_SESSION_PORT')) {
-    $env['session']['redis']['port'] = getenv('REDIS_SESSION_PORT');
-}
-if (getenv('REDIS_SESSION_DB')) {
-    $env['session']['redis']['database'] = getenv('REDIS_SESSION_DB');
+
+    if (getenv('REDIS_SESSION_PORT')) {
+        $env['session']['redis']['port'] = getenv('REDIS_SESSION_PORT');
+    }
+    if (getenv('REDIS_SESSION_DB')) {
+        $env['session']['redis']['database'] = getenv('REDIS_SESSION_DB');
+    }
 }
 
 if (getenv('REDIS_CACHE_HOST')) {
@@ -80,12 +95,13 @@ if (getenv('REDIS_CACHE_HOST')) {
             'database' => '0',
         ]
     ];
-}
-if (getenv('REDIS_CACHE_PORT')) {
-    $env['cache']['frontend']['default']['backend_options']['port'] = getenv('REDIS_CACHE_PORT');
-}
-if (getenv('REDIS_CACHE_DB')) {
-    $env['cache']['frontend']['default']['backend_options']['database'] = getenv('REDIS_CACHE_DB');
+
+    if (getenv('REDIS_CACHE_PORT')) {
+        $env['cache']['frontend']['default']['backend_options']['port'] = getenv('REDIS_CACHE_PORT');
+    }
+    if (getenv('REDIS_CACHE_DB')) {
+        $env['cache']['frontend']['default']['backend_options']['database'] = getenv('REDIS_CACHE_DB');
+    }
 }
 
 if (getenv('REDIS_FPC_HOST')) {
@@ -96,12 +112,13 @@ if (getenv('REDIS_FPC_HOST')) {
             'database' => '1',
         ]
     ];
-}
-if (getenv('REDIS_FPC_PORT')) {
-    $env['cache']['frontend']['page_cache']['backend_options']['port'] = getenv('REDIS_FPC_PORT');
-}
-if (getenv('REDIS_FPC_DB')) {
-    $env['cache']['frontend']['page_cache']['backend_options']['database'] = getenv('REDIS_FPC_DB');
+
+    if (getenv('REDIS_FPC_PORT')) {
+        $env['cache']['frontend']['page_cache']['backend_options']['port'] = getenv('REDIS_FPC_PORT');
+    }
+    if (getenv('REDIS_FPC_DB')) {
+        $env['cache']['frontend']['page_cache']['backend_options']['database'] = getenv('REDIS_FPC_DB');
+    }
 }
 
 if (getenv('VARNISH_HOST')) {
@@ -110,9 +127,10 @@ if (getenv('VARNISH_HOST')) {
             'host' => getenv('VARNISH_HOST'),
         ]
     ];
-}
-if (getenv('VARNISH_PORT')) {
-    $env['http_cache_hosts'][0]['port'] = getenv('VARNISH_PORT');
+
+    if (getenv('VARNISH_PORT')) {
+        $env['http_cache_hosts'][0]['port'] = getenv('VARNISH_PORT');
+    }
 }
 
 return $env;
