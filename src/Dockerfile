@@ -45,6 +45,11 @@ RUN echo "opcache.consistency_checks=0" >> /usr/local/etc/php/conf.d/zz-opcache.
 RUN echo "opcache.validate_timestamps=0" >> /usr/local/etc/php/conf.d/zz-opcache.conf
 RUN echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/zz-opcache.conf
 
+RUN echo "[www]" >> /usr/local/etc/php-fpm.d/zz-status.conf
+RUN echo "; Expose PHP-FPM status" >> /usr/local/etc/php-fpm.d/zz-status.conf
+RUN echo "pm.status_listen=9001" >> /usr/local/etc/php-fpm.d/zz-status.conf
+RUN echo "pm.status_path=/status" >> /usr/local/etc/php-fpm.d/zz-status.conf
+
 RUN mkdir -p /var/lib/nginx/{body,fastcgi} && \
     chown -R www-data:www-data /var/lib/nginx
 

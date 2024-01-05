@@ -7,14 +7,18 @@ metadata:
     k8s-app: magento
 spec:
   ports:
-  - name: "fpm"
-    port: 9000
-    protocol: TCP
-    targetPort: 9000
-  - name: "http"
+  - name: http
     port: 8080
     protocol: TCP
-    targetPort: 8080
+    targetPort: http
+  - name: php-metrics
+    port: 9253
+    protocol: TCP
+    targetPort: php-metrics
+  - name: nginx-metrics
+    port: 9113
+    protocol: TCP
+    targetPort: nginx-metrics
   selector:
     app: magento-web
 
@@ -125,9 +129,14 @@ spec:
         imagePullPolicy: IfNotPresent
         name: magento-web
         ports:
-        - containerPort: 9000
+        - name: http
+          containerPort: 8080
           protocol: TCP
-        - containerPort: 8080
+        - name: nginx-status
+          containerPort: 8081
+          protocol: TCP
+        - name: fpm-status
+          containerPort: 9001
           protocol: TCP
         readinessProbe:
           failureThreshold: 5
@@ -182,6 +191,37 @@ spec:
         volumeMounts:
         - name: media
           mountPath: /var/www/html/pub/media
+      - name: php-metrics-exporter
+        image: hipages/php-fpm_exporter
+        env:
+        - name: PHP_FPM_SCRAPE_URI
+          value: tcp://127.0.0.1:9001/status
+        resources:
+          requests:
+            cpu: 50m
+            memory: 128Mi
+          limits:
+            cpu: 50m
+            memory: 128Mi
+        ports:
+        - name: php-metrics
+          containerPort: 9253
+          protocol: TCP
+      - name: nginx-metrics-exporter
+        image: nginx/nginx-prometheus-exporter:1.0.0
+        args:
+        - --nginx.scrape-uri=http://127.0.0.1:8081/stub_status
+        resources:
+          requests:
+            cpu: 50m
+            memory: 128Mi
+          limits:
+            cpu: 50m
+            memory: 128Mi
+        ports:
+        - name: nginx-metrics
+          containerPort: 9113
+          protocol: TCP
       volumes:
       - name: media
         persistentVolumeClaim:
