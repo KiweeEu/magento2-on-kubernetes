@@ -4,7 +4,6 @@ metadata:
   name: elasticsearch
   labels:
     app: elasticsearch
-    k8s-app: magento
 spec:
   selector:
     app: elasticsearch
@@ -30,7 +29,6 @@ spec:
     metadata:
       labels:
         app: elasticsearch
-        k8s-app: magento
     spec:
       containers:
       - name: elasticsearch

@@ -4,7 +4,6 @@ metadata:
   name: redis
   labels:
     app: redis
-    k8s-app: magento
 spec:
   selector:
     app: redis
@@ -29,7 +28,6 @@ spec:
     metadata:
       labels:
         app: redis
-        k8s-app: magento
     spec:
       containers:
       - name: redis
