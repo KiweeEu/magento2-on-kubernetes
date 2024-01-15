@@ -11,8 +11,8 @@ spec:
       template:
         metadata:
           labels:
-            app: magento-cron
-            k8s-app: magento
+            app: magento
+            component: cron
         spec:
           initContainers:
           - name: wait-for-web

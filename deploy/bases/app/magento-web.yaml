@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: magento-web
   labels:
-    app: magento-web
-    k8s-app: magento
+    app: magento
+    component: web
 spec:
   ports:
   - name: http
@@ -20,7 +20,8 @@ spec:
     protocol: TCP
     targetPort: nginx-metrics
   selector:
-    app: magento-web
+    app: magento
+    component: web
 
 ---
 
@@ -29,13 +30,14 @@ kind: Deployment
 metadata:
   name: magento-web
   labels:
-    app: magento-web
-    k8s-app: magento
+    app: magento
+    component: web
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: magento-web
+      app: magento
+      component: web
   strategy:
     rollingUpdate:
       maxSurge: 50%
@@ -44,8 +46,8 @@ spec:
   template:
     metadata:
       labels:
-        app: magento-web
-        k8s-app: magento
+        app: magento
+        component: web
     spec:
       initContainers:
       - name: wait-for-db

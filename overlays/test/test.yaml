@@ -8,8 +8,8 @@ spec:
     metadata:
       name: test
       labels:
-        app: magento-test
-        k8s-app: magento
+        app: magento
+        component: e2e-test
     spec:
       containers:
       - name: magento-test

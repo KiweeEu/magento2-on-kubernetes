@@ -8,8 +8,8 @@ spec:
     metadata:
       name: install
       labels:
-        app: magento-install
-        k8s-app: magento
+        app: magento
+        component: install
     spec:
       initContainers:
       - name: wait-for-db
