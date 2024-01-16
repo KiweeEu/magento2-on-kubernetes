@@ -192,7 +192,7 @@ spec:
         - name: media
           mountPath: /var/www/html/pub/media
       - name: php-metrics-exporter
-        image: hipages/php-fpm_exporter
+        image: hipages/php-fpm_exporter@sha256:9b5be9d3d9551e5f0155988dd799c55d6a5c08d1ce47218fccd1b030cfdd3447
         env:
         - name: PHP_FPM_SCRAPE_URI
           value: tcp://127.0.0.1:9001/status
