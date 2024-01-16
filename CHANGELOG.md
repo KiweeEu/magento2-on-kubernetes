@@ -7,13 +7,23 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
-## Unreleased
+## [2.4.3-p3-3] - 2024-01-17
+### Changed
+- Updated supported Kubernetes versions (1.27, 1.28, 1.29)
+- Changed labels on Magento Kubernetes objects
+
+## [2.4.6-p3-2] - 2024-01-09
+### Added
+- Prometheus exporters for PHP and Nginx
+
 ### Changed
 - Passwords (database, admin) are now randomly generated
-- Updated supported Kubernetes versions (1.27, 1.28, 1.29)
+- Updated dependencies
+- Session storage is now configurable (Redis, Memcached, or database)
 
 ### Fixed
 - Varnish returning incomplete response
+- Failing CI pipeline
 
 ## [2.4.6-p3-1] - 2023-11-20
 ### Changed
