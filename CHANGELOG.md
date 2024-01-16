@@ -10,6 +10,7 @@ E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 ## Unreleased
 ### Changed
 - Passwords (database, admin) are now randomly generated
+- Updated supported Kubernetes versions (1.27, 1.28, 1.29)
 
 ### Fixed
 - Varnish returning incomplete response
