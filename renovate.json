@@ -10,5 +10,6 @@
   ],
   "kubernetes": {
       "fileMatch": ["deploy/.+\\.yaml$"]
-  }
+  },
+  "automerge": true
 }
