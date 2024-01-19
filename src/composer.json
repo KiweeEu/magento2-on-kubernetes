@@ -47,7 +47,7 @@
         }
     },
     "require-dev": {
-        "allure-framework/allure-phpunit": "^2",
+        "allure-framework/allure-phpunit": "^3",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "dg/bypass-finals": "^1.4",
         "friendsofphp/php-cs-fixer": "^3.8",
