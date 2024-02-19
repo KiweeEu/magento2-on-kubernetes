@@ -17,6 +17,9 @@ minikube:
 	minikube addons enable default-storageclass
 	minikube addons enable storage-provisioner
 	minikube addons enable metrics-server
+	helm repo add mittwald https://helm.mittwald.de
+	helm repo update
+	helm upgrade --install kubernetes-secret-generator mittwald/kubernetes-secret-generator
 
 destroy:
 	$(KUBECTL) delete -k deploy/step-3
