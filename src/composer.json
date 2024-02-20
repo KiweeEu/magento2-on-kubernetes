@@ -13,17 +13,18 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "laminas/laminas-dependency-plugin": true,
-            "magento/*": true
+            "magento/*": true,
+            "php-http/discovery": true
         },
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "version": "2.4.5-p2",
+    "version": "2.4.6-p4",
     "require": {
         "graycore/magento2-stdlogging": "^2.0",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
         "magento/composer-root-update-plugin": "~2.0",
-        "magento/product-community-edition": "2.4.6-p3"
+        "magento/product-community-edition": "2.4.6-p4"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -53,13 +54,14 @@
         "friendsofphp/php-cs-fixer": "^3.8",
         "lusitanian/oauth": "^0.8",
         "magento/magento-coding-standard": "*",
-        "magento/magento2-functional-testing-framework": "^4.2.1",
+        "magento/magento2-functional-testing-framework": "^4.3.1",
         "pdepend/pdepend": "^2.10",
-        "phpmd/phpmd": "^2.12.0",
+        "phpmd/phpmd": "^2.12",
         "phpstan/phpstan": "^1.9",
         "phpunit/phpunit": "^9.5",
         "sebastian/phpcpd": "^6.0",
-        "symfony/finder": "^5.4"
+        "symfony/finder": "^5.4",
+        "symfony/process": "<=v5.4.23"
     },
     "conflict": {
         "gene/bluefoot": "*"
