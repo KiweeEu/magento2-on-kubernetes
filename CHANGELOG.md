@@ -7,7 +7,16 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
-## [2.4.3-p3-3] - 2024-01-17
+## [2.4.6-p4-1] - 2024-02-21
+### Changed
+- Updated Magento to v2.4.6-p4
+- Changed labels on Magento resources
+
+### Fixed
+- 502 errors on Minikube ([#197](https://github.com/KiweeEu/magento2-on-kubernetes/issues/197))
+- step-1 failing due to missing secrets ([#196](https://github.com/KiweeEu/magento2-on-kubernetes/issues/196))
+
+## [2.4.6-p3-3] - 2024-01-17
 ### Changed
 - Updated supported Kubernetes versions (1.27, 1.28, 1.29)
 - Changed labels on Magento Kubernetes objects
