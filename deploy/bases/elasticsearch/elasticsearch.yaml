@@ -30,6 +30,18 @@ spec:
       labels:
         app: elasticsearch
     spec:
+      initContainers:
+      - name: set-volume-ownership
+        image: busybox
+        command:
+        - /bin/sh
+        args:
+        - -c
+        - ls -la /usr/share/elasticsearch # chown -R 1000:1000 /usr/share/elasticsearch/data
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+          subPath: data
       containers:
       - name: elasticsearch
         image: elasticsearch:7.17.16@sha256:fa2d4b8b61463150d12533712cd7e656423ec9d1fb1ea81dc6bade7816ad528d
@@ -48,6 +60,7 @@ spec:
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: data
+          subPath: data
         resources:
           requests:
             memory: 1Gi
