@@ -29,6 +29,18 @@ spec:
         app: db
         k8s-app: magento
     spec:
+      initContainers:
+      - name: set-volume-ownership
+        image: busybox
+        command:
+        - /bin/sh
+        args:
+        - -c
+        - chown -R 1001:1001 /var/lib/mysql
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: data
+          subPath: mysql
       containers:
       - name: db
         image: percona:8.0@sha256:fe3be2ef00d68a9ab8fa3dd2128e33186b61b900b31dda4dd9e6f244b122e458

@@ -50,6 +50,17 @@ spec:
         component: web
     spec:
       initContainers:
+      - name: set-volume-ownership
+        image: busybox
+        command:
+        - /bin/sh
+        args:
+        - -c
+        - chown -R 33:33 /var/www/html/pub/media
+        volumeMounts:
+        - mountPath: /var/www/html/pub/media
+          name: media
+          subPath: media
       - name: wait-for-db
         image: kiweeteam/magento2:2.4.6-p3-3@sha256:620498d0cf52795c3cfb8760449c0781b493df56d4f8c91f8bcbc1a3206be68d
         command:
@@ -191,8 +202,9 @@ spec:
         - secretRef:
             name: magento-admin
         volumeMounts:
-        - name: media
-          mountPath: /var/www/html/pub/media
+        - mountPath: /var/www/html/pub/media
+          name: media
+          subPath: media
       - name: php-metrics-exporter
         image: hipages/php-fpm_exporter@sha256:9b5be9d3d9551e5f0155988dd799c55d6a5c08d1ce47218fccd1b030cfdd3447
         env:
