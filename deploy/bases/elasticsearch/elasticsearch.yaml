@@ -37,7 +37,7 @@ spec:
         - /bin/sh
         args:
         - -c
-        - ls -la /usr/share/elasticsearch # chown -R 1000:1000 /usr/share/elasticsearch/data
+        - chown -R 1000:1000 /usr/share/elasticsearch/data
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: data
