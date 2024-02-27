@@ -50,17 +50,6 @@ spec:
         component: web
     spec:
       initContainers:
-      - name: set-volume-ownership
-        image: busybox
-        command:
-        - /bin/sh
-        args:
-        - -c
-        - chown -R 33:33 /var/www/html/pub/media
-        volumeMounts:
-        - mountPath: /var/www/html/pub/media
-          name: media
-          subPath: media
       - name: wait-for-db
         image: kiweeteam/magento2:2.4.6-p3-3@sha256:620498d0cf52795c3cfb8760449c0781b493df56d4f8c91f8bcbc1a3206be68d
         command:
