@@ -7,6 +7,10 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## [2.4.6-p4-3] - 2024-03-04
+### Fixed
+- Fixed kiweeteam/magento2 image tags in all manifests
+
 ## [2.4.6-p4-2] - 2024-03-01
 ### Fixed
 - Added initContainers to set volume permissions for Magento, MySQL, and Elasticsearch
