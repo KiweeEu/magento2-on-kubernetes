@@ -11,6 +11,10 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: http
+  - name: proxy
+    port: 8081
+    protocol: TCP
+    targetPort: proxy
   - name: php-metrics
     port: 9253
     protocol: TCP
@@ -134,8 +138,11 @@ spec:
         - name: http
           containerPort: 8080
           protocol: TCP
-        - name: nginx-status
+        - name: proxy
           containerPort: 8081
+          protocol: TCP
+        - name: nginx-status
+          containerPort: 6081
           protocol: TCP
         - name: fpm-status
           containerPort: 9001
@@ -213,7 +220,7 @@ spec:
       - name: nginx-metrics-exporter
         image: nginx/nginx-prometheus-exporter:1.1.0@sha256:d710e0ff2505a7037dd21e47eae07025010c0de08a6247d1a704824823becfd0
         args:
-        - --nginx.scrape-uri=http://127.0.0.1:8081/stub_status
+        - --nginx.scrape-uri=http://127.0.0.1:6081/stub_status
         resources:
           requests:
             cpu: 50m

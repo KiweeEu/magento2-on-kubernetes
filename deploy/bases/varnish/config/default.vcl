@@ -7,7 +7,8 @@ import std;
 
 backend default {
     .host = "magento-web";
-    .port = "8080";
+    .port = "8081";
+    .proxy_header = 2;
     .first_byte_timeout = 60s;
     .probe = {
         .url = "/health_check.php";
@@ -24,7 +25,7 @@ sub vcl_recv {
     }
 
     if (req.method == "PURGE") {
-        if (std.port(server.ip) == 6091) {
+        if (std.port(server.ip) != 6081) {
             return (synth(405, "Method not allowed"));
         }
         # To use the X-Pool header for purging varnish during automated deployments, make sure the X-Pool header
