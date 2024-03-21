@@ -9,13 +9,17 @@ spec:
     app: varnish
   ports:
   - name: http
-    port: 80
+    port: 8080
     protocol: TCP
-    targetPort: 8080
+    targetPort: http
   - name: proxy
-    port: 6091
+    port: 8081
     protocol: TCP
-    targetPort: 6091
+    targetPort: proxy
+  - name: admin
+    port: 6081
+    protocol: TCP
+    targetPort: admin
 
 ---
 
@@ -40,11 +44,18 @@ spec:
         args:
           - -c
           - |
-            varnishd -a :8080 -a :6091 -f /etc/varnish/default.vcl -s default,512M;
+            varnishd -a :8080 -a :8081,PROXY -a :6081 -f /etc/varnish/default.vcl -s default,512M;
             varnishncsa -F '%h %l %u %t "%r" %s %b "%{Referer}i" "%{User-agent}i" %{Varnish:handling}x'
         ports:
-        - containerPort: 8080
-        - containerPort: 6091
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        - name: proxy
+          containerPort: 8081
+          protocol: TCP
+        - name: admin
+          containerPort: 6081
+          protocol: TCP
         resources:
           requests:
             cpu: 50m

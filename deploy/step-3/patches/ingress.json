@@ -7,7 +7,7 @@
   {
     "op": "replace",
     "path": "/spec/defaultBackend/service/port/name",
-    "value": "proxy"
+    "value": "http"
   },
   {
     "op": "replace",
@@ -17,6 +17,6 @@
   {
     "op": "replace",
     "path": "/spec/rules/0/http/paths/0/backend/service/port/name",
-    "value": "proxy"
+    "value": "http"
   }
 ]

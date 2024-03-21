@@ -1,7 +1,7 @@
 server {
     access_log /dev/stdout;
 
-    listen 8081;
+    listen 6081;
     server_name _;
 
     location /stub_status {
@@ -14,6 +14,7 @@ server {
     access_log /dev/stdout;
 
     listen 8080;
+    listen 8081 proxy_protocol;
     server_name _;
     set $MAGE_ROOT /var/www/html;
 
