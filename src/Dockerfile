@@ -96,6 +96,13 @@ EXPOSE 8080
 
 FROM build as dev
 
+USER root
+RUN cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" && \
+    sed -i -E 's/^variables_order = ".*"$/variables_order = "EGPCS"/' $PHP_INI_DIR/php.ini && \
+    sed -i -E 's/^session.cookie_samesite = ".*"$/session.cookie_samesite = "Strict"/' $PHP_INI_DIR/php.ini
+
+USER www-data
+
 RUN composer install \
     --no-interaction \
     --no-progress
@@ -103,6 +110,13 @@ RUN composer install \
 COPY --chown=www-data app/etc/env.docker.php app/etc/env.php
 
 FROM build as app
+
+USER root
+RUN cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
+    sed -i -E 's/^variables_order = ".*"$/variables_order = "EGPCS"/' $PHP_INI_DIR/php.ini && \
+    sed -i -E 's/^session.cookie_samesite = ".*"$/session.cookie_samesite = "Strict"/' $PHP_INI_DIR/php.ini
+
+USER www-data
 
 ENV MAGE_MODE=production
 
