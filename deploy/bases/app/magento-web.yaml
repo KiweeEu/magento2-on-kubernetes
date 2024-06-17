@@ -76,7 +76,7 @@ spec:
         - configMapRef:
             name: additional
       - name: wait-for-elasticsearch
-        image: curlimages/curl:8.5.0@sha256:08e466006f0860e54fc299378de998935333e0e130a15f6f98482e9f8dab3058
+        image: curlimages/curl:8.8.0@sha256:73e4d532ea62d7505c5865b517d3704966ffe916609bedc22af6833dc9969bcd
         command: ["/bin/sh"]
         args:
         - -c
