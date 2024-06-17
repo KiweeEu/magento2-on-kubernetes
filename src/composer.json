@@ -19,7 +19,7 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "version": "2.4.6-p4",
+    "version": "2.4.6-p5",
     "require": {
         "graycore/magento2-stdlogging": "^2.0",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
