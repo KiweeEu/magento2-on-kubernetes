@@ -13,7 +13,7 @@ spec:
     spec:
       initContainers:
       - name: set-volume-ownership
-        image: busybox
+        image: busybox@sha256:9ae97d36d26566ff84e8893c64a6dc4fe8ca6d1144bf5b87b2b85a32def253c7
         command:
         - /bin/sh
         args:
@@ -24,7 +24,7 @@ spec:
           name: media
           subPath: media
       - name: wait-for-db
-        image: kiweeteam/magento2:2.4.6-p4-3
+        image: kiweeteam/magento2:2.4.6-p4-3@sha256:ddcef5259290378c76b6e6b35b10b285a9809b84328c427d98ca4f392ae43330
         command:
           - /bin/bash
         args:
@@ -62,7 +62,7 @@ spec:
             name: additional
       containers:
       - name: magento-setup
-        image: kiweeteam/magento2:2.4.6-p4-3
+        image: kiweeteam/magento2:2.4.6-p4-3@sha256:ddcef5259290378c76b6e6b35b10b285a9809b84328c427d98ca4f392ae43330
         command:
           - /bin/bash
         args:
