@@ -13,7 +13,7 @@ spec:
       - name: magento-web
       initContainers:
       - name: wait-for-redis
-        image: busybox@sha256:6d9ac9237a84afe1516540f40a0fafdc86859b2141954b4d643af7066d598b74
+        image: busybox@sha256:9ae97d36d26566ff84e8893c64a6dc4fe8ca6d1144bf5b87b2b85a32def253c7
         command: ["/bin/sh"]
         args:
           - -c
@@ -42,7 +42,7 @@ spec:
       - name: magento-setup
       initContainers:
       - name: wait-for-redis
-        image: busybox@sha256:6d9ac9237a84afe1516540f40a0fafdc86859b2141954b4d643af7066d598b74
+        image: busybox@sha256:9ae97d36d26566ff84e8893c64a6dc4fe8ca6d1144bf5b87b2b85a32def253c7
         command: ["/bin/sh"]
         args:
           - -c
