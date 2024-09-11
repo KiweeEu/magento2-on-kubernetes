@@ -7,9 +7,6 @@
         "AFL-3.0"
     ],
     "config": {
-        "platform": {
-            "php": "8.1.19"
-        },
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "laminas/laminas-dependency-plugin": true,
