@@ -1,0 +1,9 @@
+*
+!.gitignore
+!app/etc/config.php
+!app/etc/env.docker.php
+!composer.json
+!composer.lock
+!Dockerfile
+!etc
+!hooks
