@@ -7,6 +7,17 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## Unreased
+### Added
+- Added PROXY protocol support
+
+### Removed
+- Removed ingressClass overrides
+
+### Changed
+- Updated Magento to v2.4.6-p7
+- Dev dependency updates
+
 ## [2.4.6-p4-3] - 2024-03-04
 ### Fixed
 - Fixed kiweeteam/magento2 image tags in all manifests
