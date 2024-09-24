@@ -11,15 +11,3 @@ patchesJson6902:
     version: v1
     kind: Elasticsearch
     name: elasticsearch
-- path: patches/ingress.json
-  target:
-    group: networking.k8s.io
-    version: v1
-    kind: Ingress
-    name: main
-
-configMapGenerator:
-- name: config
-  behavior: merge
-  envs:
-  - patches/common.env

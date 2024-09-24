@@ -17,8 +17,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl:
-      'https://ingress-nginx-nginx-ingress-controller.default.svc.cluster.local/',
+    baseUrl: 'https://magento.test/',
     specPattern: 'cypress/e2e/**/*.{spec.js,feature}',
   },
 })

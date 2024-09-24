@@ -61,7 +61,7 @@ deploy:
               create: true
               name: nginx
               setAsDefaultIngress: true
-      - name: secrets-generator
+      - name: secret-generator
         remoteChart: kubernetes-secret-generator
         repo: https://helm.mittwald.de
         wait: true
@@ -77,14 +77,15 @@ portForward:
 verify:
 - name: magento-e2e
   executionMode:
-    kubernetesCluster: {}
+    kubernetesCluster:
+      overrides: '{ "apiVersion": "batch/v1", "spec": { "template": { "spec": { "hostAliases": [ { "ip": "10.96.0.2", "hostnames": [ "magento.test" ] } ] } } } }'
   container:
     name: cypress
     image: kiweeteam/magento2-cypress
     command: ["/bin/sh"]
     env:
       - name: CYPRESS_BASE_URL
-        value: https://ingress-nginx-nginx-ingress-controller.default.svc.cluster.local/
+        value: https://magento.test/
     args:
     - -c
     - |
