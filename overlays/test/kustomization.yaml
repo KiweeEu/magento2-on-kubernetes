@@ -1,6 +1,5 @@
 bases:
   - ../kind
-  - ../../test
 
 patchesStrategicMerge:
   - patches/magento-web.yaml

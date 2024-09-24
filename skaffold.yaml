@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2beta26
+apiVersion: skaffold/v4beta10
 kind: Config
 metadata:
   name: magento-on-kubernetes
@@ -16,12 +16,19 @@ build:
     docker:
       dockerfile: Dockerfile
       target: app
+  - image: kiweeteam/magento2-cypress
+    context: test/e2e
   local:
     useBuildkit: true
-deploy:
+manifests:
   kustomize:
     paths:
-      - overlays/kind
+      - overlays/test
+deploy:
+  statusCheck: true
+  tolerateFailuresUntilDeadline: true
+  statusCheckDeadlineSeconds: 1200
+  kubectl: {}
   helm:
     releases:
       - name: cert-manager
@@ -34,45 +41,59 @@ deploy:
             defaultIssuerKind: ClusterIssuer
             defaultIssuerName: selfsigned
       - name: ingress-nginx
-        remoteChart: nginx-ingress
-        repo: https://helm.nginx.com/stable
+        remoteChart: oci://ghcr.io/nginxinc/charts/nginx-ingress
+        version: 1.2.1
+        wait: true
         setValues:
+          installCRDs: true
           controller:
+            kind: daemonset
+            enableSnippets: true
             service:
+              enabled: true
               type: ClusterIP
+              clusterIP: 10.96.0.2
+              httpPort:
+                port: 80
+              httpsPort:
+                port: 443
             ingressClass:
-              name: nginx
               create: true
+              name: nginx
               setAsDefaultIngress: true
       - name: secrets-generator
         remoteChart: kubernetes-secret-generator
         repo: https://helm.mittwald.de
+        wait: true
 portForward:
   - resourceType: Service
-    resourceName: ingress-nginx-nginx-ingress-controller
+    resourceName: ingress-nginx-ingress-controller
     port: 443
-    localPort: 8443
+    localPort: 443
   - resourceType: Service
-    resourceName: ingress-nginx-nginx-ingress-controller
+    resourceName: ingress-nginx-ingress-controller
     port: 80
-    localPort: 8080
-profiles:
-  - name: ci
-    patches:
-      - op: replace
-        path: /deploy/kustomize/paths/0
-        value: overlays/test
-    build:
-      artifacts:
-      - image: kiweeteam/magento2-cypress
-        context: test/e2e
-      - image: kiweeteam/magento2
-        context: src
-        sync:
-          infer:
-          - 'app/etc/config.php'
-          - 'composer.json'
-          - 'composer.lock'
-        docker:
-          dockerfile: Dockerfile
-          target: app
+    localPort: 80
+verify:
+- name: magento-e2e
+  executionMode:
+    kubernetesCluster: {}
+  container:
+    name: cypress
+    image: kiweeteam/magento2-cypress
+    command: ["/bin/sh"]
+    env:
+      - name: CYPRESS_BASE_URL
+        value: https://ingress-nginx-nginx-ingress-controller.default.svc.cluster.local/
+    args:
+    - -c
+    - |
+      curl \
+        -kILSs \
+        -X GET \
+        --fail \
+        --retry 9 \
+        --retry-all-errors \
+        $CYPRESS_BASE_URL/simple-product-1.html
+
+      npm test

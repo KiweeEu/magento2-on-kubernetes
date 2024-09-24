@@ -39,16 +39,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install apparmor-profiles
           sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
-      - name: Deploy Magento
+      - name: Build
         run: |
-          skaffold run --profile="ci" --status-check=false
-          kubectl wait --timeout=0 --for=condition=complete job/magento-install || \
-          kubectl wait --timeout=300s --for=condition=Ready pod --selector=job-name=magento-install
-          kubectl logs -f job/magento-install --all-containers
-          kubectl wait --timeout=60s --for=condition=complete job/magento-install
+          skaffold build --file-output=build.artifacts
+      - name: Run
+        run: |
+          skaffold run --status-check=true
       - name: Test
         run: |
-          kubectl wait --timeout=0 --for=condition=complete job/cypress || \
-          kubectl wait --timeout=120s --for=condition=Ready pod --selector=job-name=cypress
-          kubectl logs -f job/cypress
-          kubectl wait --timeout=300s --for=condition=complete job/cypress
+          skaffold verify -a build.artifacts
