@@ -20,7 +20,7 @@ spec:
       port:
         name: http
   rules:
-    - host: magento2.local
+    - host: magento.test
       http:
         paths:
           - path: /
@@ -32,5 +32,5 @@ spec:
                   name: http
   tls:
     - hosts:
-        - magento2.local
+        - magento.test
       secretName: magento
