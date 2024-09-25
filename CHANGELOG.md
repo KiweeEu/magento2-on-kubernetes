@@ -8,6 +8,9 @@ suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
 ## Unreased
+### Fixed
+- TLS is now supported locally with self-signed certificates managed by cert-manager
+
 ### Added
 - Added PROXY protocol support
 

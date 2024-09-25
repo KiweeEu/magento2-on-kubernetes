@@ -1,6 +1,9 @@
 bases:
   - ../../deploy/step-3
 
+resources:
+  - clusterissuer-selfsigned.yaml
+
 patchesStrategicMerge:
   - patches/pvc.yaml
 
