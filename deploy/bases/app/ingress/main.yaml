@@ -3,7 +3,10 @@ kind: Ingress
 metadata:
   name: main
   annotations:
-    kubernetes.io/tls-acme: "false"
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    cert-manager.io/issue-temporary-certificate: "true"
+    ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/proxy-buffer-size: "256k"
     nginx.ingress.kubernetes.io/proxy-buffers: "4"
     nginx.org/proxy-buffer-size: "256k"
@@ -27,3 +30,7 @@ spec:
                 name: magento-web
                 port:
                   name: http
+  tls:
+    - hosts:
+        - magento2.local
+      secretName: magento

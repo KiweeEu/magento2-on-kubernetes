@@ -24,6 +24,15 @@ deploy:
       - overlays/kind
   helm:
     releases:
+      - name: cert-manager
+        remoteChart: cert-manager
+        repo: https://charts.jetstack.io
+        wait: true
+        setValues:
+          installCRDs: true
+          ingressShim:
+            defaultIssuerKind: ClusterIssuer
+            defaultIssuerName: selfsigned
       - name: ingress-nginx
         remoteChart: nginx-ingress
         repo: https://helm.nginx.com/stable

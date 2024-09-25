@@ -18,7 +18,7 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
     baseUrl:
-      'http://ingress-nginx-nginx-ingress-controller.default.svc.cluster.local/',
+      'https://ingress-nginx-nginx-ingress-controller.default.svc.cluster.local/',
     specPattern: 'cypress/e2e/**/*.{spec.js,feature}',
   },
 })
