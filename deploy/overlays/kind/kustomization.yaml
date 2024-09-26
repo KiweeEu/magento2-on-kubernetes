@@ -1,5 +1,5 @@
 bases:
-  - ../../deploy/step-3
+  - ../../walkthrough/step-3
 
 resources:
   - clusterissuer-selfsigned.yaml

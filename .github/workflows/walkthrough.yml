@@ -1,0 +1,64 @@
+name: Test all steps separately
+on: [pull_request]
+jobs:
+  test:
+    strategy:
+      matrix:
+        k8s-version: [v1.27.3, v1.28.0, v1.29.0]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0
+      - name: Create k8s Kind Cluster
+        uses: helm/kind-action@0025e74a8c7512023d06dc019c617aa3cf561fde # v1.10.0
+        with:
+          node_image: kindest/node:${{ matrix.k8s-version }}
+      - uses: alexellis/setup-arkade@b1816384b2260cfd2c023c6798d26075786cfc7f # v3
+      - uses: alexellis/arkade-get@master
+        with:
+          kubectl: latest
+          kustomize: latest
+          helm: latest
+      - name: Install Skaffold
+        run: |
+          curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+          sudo install skaffold /usr/local/bin/
+          skaffold version
+      - name: Cache skaffold image builds & config
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: ~/.skaffold/
+          key: fixed-${{ github.sha }}
+      # https://kind.sigs.k8s.io/docs/user/known-issues/#apparmor
+      - name: Disable AppArmor for MySQL
+        run: |
+          set -x
+          sudo apt-get update
+          sudo apt-get install apparmor-profiles
+          sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+      - name: Build
+        run: |
+          skaffold build --file-output=build.artifacts
+      - name: Run step 1
+        run: |
+          kubectl delete job magento-install || echo "Continuing"
+          make step-1
+      - name: Test step 1
+        run: |
+          skaffold verify -a build.artifacts
+      - name: Run step 2
+        run: |
+          kubectl delete job magento-install || echo "Continuing"
+          make step-2
+      - name: Test step 2
+        run: |
+          skaffold verify -a build.artifacts
+      - name: Run step 3
+        run: |
+          kubectl delete job magento-install || echo "Continuing"
+          make step-3
+      - name: Test step 3
+        run: |
+          skaffold verify -a build.artifacts
