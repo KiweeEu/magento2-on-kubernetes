@@ -23,7 +23,7 @@ build:
 manifests:
   kustomize:
     paths:
-      - overlays/test
+      - deploy/overlays/test
 deploy:
   statusCheck: true
   tolerateFailuresUntilDeadline: true

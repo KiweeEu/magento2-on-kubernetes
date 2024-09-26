@@ -5,7 +5,7 @@ metadata:
 
 resources:
   - ../step-2
-  - ../bases/varnish
+  - ../../bases/varnish
 
 patchesJson6902:
 - path: patches/ingress.json

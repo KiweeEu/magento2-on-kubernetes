@@ -5,7 +5,7 @@ metadata:
 
 bases:
   - ../step-1
-  - ../bases/redis
+  - ../../bases/redis
 
 resources:
   - hpa/magento-web.yaml
