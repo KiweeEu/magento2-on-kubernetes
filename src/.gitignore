@@ -6,4 +6,5 @@
 !composer.lock
 !Dockerfile
 !etc
+!etc/**
 !hooks
