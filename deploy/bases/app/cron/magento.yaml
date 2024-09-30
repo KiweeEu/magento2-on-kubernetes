@@ -32,7 +32,7 @@ spec:
                 name: config
           containers:
           - name: magento-cron
-            image: kiweeteam/magento2:2.4.6-p4-3
+            image: kiweeteam/magento2:2.4.6-p7-2
             command: ["/bin/sh"]
             args:
             - -c
