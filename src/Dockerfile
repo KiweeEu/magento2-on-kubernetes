@@ -72,7 +72,7 @@ WORKDIR /var/www/html
 
 ARG COMPOSER_AUTH
 
-COPY --from=composer:2.8.1@sha256:0d9ed84312bc8f0094c372b5074ddf89abffddd6e8b91d46f9d39f98cbd512b4 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.8.1@sha256:23b816d42eed0d55be359dcf8b6e5b8677bba0225cde423d91014b45e74c2d15 /usr/bin/composer /usr/bin/composer
 
 COPY --chown=www-data composer.json composer.json
 COPY --chown=www-data composer.lock composer.lock
