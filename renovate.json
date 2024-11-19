@@ -3,6 +3,10 @@
   "extends": [
     "config:best-practices"
   ],
+  "separateMajorMinor": true,
+  "separateMinorPatch": true,
+  "separateMultipleMinor": true,
+  "separateMultipleMajor": true,
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
@@ -11,5 +15,7 @@
   "kubernetes": {
       "fileMatch": ["deploy/.+\\.yaml$"]
   },
-  "automerge": true
+  "automerge": true,
+  "automergeType": "pr",
+  "automergeStrategy": "fast-forward"
 }
