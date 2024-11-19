@@ -7,8 +7,12 @@ This project follows [Magento 2 versions](https://devdocs.magento.com/release/po
 suffixed with Docker image version for given Magento 2 release.
 E.g. 2.3.2-1 is the first version of the Magento 2.3.2 image.
 
+## Unreleased
+### Changed
+- Updated Magento to v2.4.6-p8
+
 ## [2.4.6-p7-2] - 2024-09-30
-###
+### Fixed
 - Fixed Nginx exported not collecting metrics
 
 ### Added
