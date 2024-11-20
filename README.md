@@ -41,3 +41,9 @@ make step-2
 # Deploy step-2 with Varnish
 make step-3
 ```
+
+## Contributing
+
+Contributions (issues, pull-requests) are welcome!
+
+Please refer to [CONTRIBUTING](CONTRIBUTING.md) to get started.
