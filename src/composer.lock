@@ -23992,16 +23992,16 @@
         },
         {
             "name": "dg/bypass-finals",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/bypass-finals.git",
-                "reference": "efe2fe04bae9f0de271dd462afc049067889e6d1"
+                "reference": "dbe238be99c8d2406ce09d254cbcc93d90578c88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/bypass-finals/zipball/efe2fe04bae9f0de271dd462afc049067889e6d1",
-                "reference": "efe2fe04bae9f0de271dd462afc049067889e6d1",
+                "url": "https://api.github.com/repos/dg/bypass-finals/zipball/dbe238be99c8d2406ce09d254cbcc93d90578c88",
+                "reference": "dbe238be99c8d2406ce09d254cbcc93d90578c88",
                 "shasum": ""
             },
             "require": {
@@ -24039,9 +24039,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dg/bypass-finals/issues",
-                "source": "https://github.com/dg/bypass-finals/tree/v1.6.0"
+                "source": "https://github.com/dg/bypass-finals/tree/v1.7.0"
             },
-            "time": "2023-11-19T22:19:30+00:00"
+            "time": "2024-05-17T01:03:44+00:00"
         },
         {
             "name": "doctrine/instantiator",
