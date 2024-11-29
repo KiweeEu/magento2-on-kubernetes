@@ -1,11 +1,10 @@
-Magento 2 on kubernetes
-=======================
+# ![](https://repository-images.githubusercontent.com/244943894/d275c4fd-3345-49ff-87cc-6d064b39f0f0 "Magento® on Kubernetes")
 
-This is a companion repository for our
-[Magento 2 on Kubernetes](https://kiwee.eu/magento-2-on-kubernetes/) blog post.
+Here you will find everything you need to **deploy Magento to a Kubernetes cluster**.
 
-Here you will find all manifests discussed in the article as well as everything
-else you need to deploy Magento 2 on Kubernetes yourself.
+See our article on [how to run Magento on Kubernetes][mok-article] for a complete walkthrough of this setup.
+
+We also offer [commercial support for running Magento on Kubernetes][mok-landing].
 
 ## Prerequisites
 
@@ -47,3 +46,6 @@ make step-3
 Contributions (issues, pull-requests) are welcome!
 
 Please refer to [CONTRIBUTING](CONTRIBUTING.md) to get started.
+
+[mok-landing]: https://kiwee.eu/services/cloud-native-solutions-for-ecommerce/magento-2-on-kubernetes-in-the-cloud/
+[mok-article]: https://kiwee.eu/magento-2-on-kubernetes/
