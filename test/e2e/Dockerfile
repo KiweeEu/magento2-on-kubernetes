@@ -1,4 +1,4 @@
-FROM cypress/base:22.11.0@sha256:d8168b757f16fa9276f5319909dad171916d4163dbe440a1747f0eaad65f543e
+FROM cypress/base:22.12.0@sha256:227d72382d53081dd326e79c5a51acd219f26400a72705d59e83b3208fcd65a3
 
 RUN apt update \
     && apt install --no-install-recommends --yes \
