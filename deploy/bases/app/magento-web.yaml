@@ -218,7 +218,7 @@ spec:
           containerPort: 9253
           protocol: TCP
       - name: nginx-metrics-exporter
-        image: nginx/nginx-prometheus-exporter:1.4.0@sha256:a5a1e3ee01c1456c6c690ca05d5bcb1eac65753e66e3e9951317284b34190edd
+        image: nginx/nginx-prometheus-exporter:1.4.1@sha256:a146e4e56cedf2bd4858ce0d04cf4da0b7ce1c88b7973f9221934c8651fa3e1c
         args:
         - --nginx.scrape-uri=http://127.0.0.1:6081/stub_status
         resources:
