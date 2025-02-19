@@ -44,7 +44,7 @@ spec:
           subPath: data
       containers:
       - name: elasticsearch
-        image: elasticsearch:7.17.27@sha256:9a6443f55243f6acbfeb4a112d15eb3b9aac74bf25e0e39fa19b3ddd3a6879d0
+        image: elasticsearch:8.17.2@sha256:f388389127fe71274ff82493748e26677b88ff599785875f088627e0ca0e4c28
         imagePullPolicy: IfNotPresent
         env:
         - name: ES_JAVA_OPTS
