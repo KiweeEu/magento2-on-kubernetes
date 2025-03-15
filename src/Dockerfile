@@ -1,4 +1,4 @@
-FROM php:8.2.28-fpm@sha256:90e590ee3ff666e14fcbd1f9597ea8ea2582bc182c2ee46f20b7caa026a705e2 as base
+FROM php:8.3.19-fpm@sha256:1111b05c46e61a9e78b3089b7ddaecfb93a97fdadb5b08fd5edc3dcf16238cab as base
 
 ENV COMPOSER_HOME=/tmp/composer
 
