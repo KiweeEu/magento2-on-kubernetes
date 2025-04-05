@@ -18,7 +18,7 @@
     },
     "version": "2.4.6-p8",
     "require": {
-        "php": "~8.2.25",
+        "php": "~8.4.0",
         "graycore/magento2-stdlogging": "^2.0",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
         "magento/composer-root-update-plugin": "~2.0",
