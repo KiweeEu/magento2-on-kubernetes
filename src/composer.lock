@@ -5165,15 +5165,15 @@
         },
         {
             "name": "magento/composer-root-update-plugin",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "dist": {
                 "type": "zip",
-                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/composer-root-update-plugin/magento-composer-root-update-plugin-2.0.4.zip"
+                "url": "https://repo-magento-mirror.fooman.co.nz/dist/magento/composer-root-update-plugin/magento-composer-root-update-plugin-2.0.5.zip"
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
                 "composer/composer": "^1.0 || ^2.0",
-                "php": "~7.3.0||~7.4.0||~8.0.0||~8.1.0||~8.2.0||~8.3.0"
+                "php": "~7.3.0||~7.4.0||~8.0.0||~8.1.0||~8.2.0||~8.3.0||~8.4.0"
             },
             "type": "composer-plugin",
             "extra": {
