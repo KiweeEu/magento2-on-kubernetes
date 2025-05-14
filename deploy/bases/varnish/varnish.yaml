@@ -38,7 +38,7 @@ spec:
         app: varnish
     spec:
       containers:
-      - image: varnish:7.7@sha256:3677549b54558d31781d7bc5cf7eedb7dc529c8c2bdd658b5051bee38bddf716
+      - image: varnish:7.7@sha256:95358c34d57f919b1dfe54bd76945d5ef0d17bc78119f881f31b6da03674b182
         name: varnish
         command: ["/bin/sh"]
         args:
