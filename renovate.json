@@ -13,7 +13,9 @@
     "**/vendor/**"
   ],
   "kubernetes": {
-      "fileMatch": ["deploy/.+\\.yaml$"]
+    "managerFilePatterns": [
+      "/deploy/.+\\.yaml$/"
+    ]
   },
   "automerge": true,
   "automergeType": "pr",
