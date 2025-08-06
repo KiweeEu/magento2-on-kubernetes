@@ -16,13 +16,13 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "version": "2.4.6-p8",
+    "version": "2.4.6-p11",
     "require": {
         "php": "~8.2.25",
         "graycore/magento2-stdlogging": "^2.0",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
         "magento/composer-root-update-plugin": "~2.0",
-        "magento/product-community-edition": "2.4.6-p8"
+        "magento/product-community-edition": "2.4.6-p11"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -58,8 +58,7 @@
         "phpstan/phpstan": "^1.9",
         "phpunit/phpunit": "^9.5",
         "sebastian/phpcpd": "^6.0",
-        "symfony/finder": "^5.4",
-        "symfony/process": "<=v5.4.23"
+        "symfony/finder": "^5.4"
     },
     "conflict": {
         "gene/bluefoot": "*"
