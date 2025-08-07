@@ -43,7 +43,7 @@ spec:
           subPath: mysql
       containers:
       - name: db
-        image: percona:8.0@sha256:048d190c03cbb3322f8fadbf580dbe8b367896e3bc33d807b269bcad4bd777b2
+        image: percona:8.0@sha256:5a09f82af8005b1df25cffa7a24472b2eaa57c4dbb355c050e24b2dd062e1005
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: data
