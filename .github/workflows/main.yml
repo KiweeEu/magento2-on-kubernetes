@@ -17,7 +17,7 @@ jobs:
         with:
           node_image: kindest/node:${{ matrix.k8s-version }}
       - uses: alexellis/setup-arkade@b1816384b2260cfd2c023c6798d26075786cfc7f # v3
-      - uses: alexellis/arkade-get@master
+      - uses: alexellis/arkade-get@5594ddff52ec7b8a71efd73acaa9e52936e35e16 # master
         with:
           kubectl: latest
           kustomize: latest
