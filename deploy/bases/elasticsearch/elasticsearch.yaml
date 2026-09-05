@@ -32,7 +32,7 @@ spec:
     spec:
       initContainers:
       - name: set-volume-ownership
-        image: busybox@sha256:f9a104fddb33220ec80fc45a4e606c74aadf1ef7a3832eb0b05be9e90cd61f5f
+        image: busybox@sha256:dc2d74b28e4cf8984fa52af1f39bc7c3d9c73760b41a74d629f5d11b1ab28616
         command:
         - /bin/sh
         args:
