@@ -7,7 +7,7 @@ spec:
     spec:
       initContainers:
       - name: setup
-        image: kiweeteam/magento2:2.4.6-p4-3
+        image: kiweeteam/magento2:2.4.6-p4-3@sha256:ddcef5259290378c76b6e6b35b10b285a9809b84328c427d98ca4f392ae43330
         command:
         - /bin/bash
         args:
